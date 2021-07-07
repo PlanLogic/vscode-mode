@@ -19,6 +19,7 @@
   (define-key map [f1] 'help)
   (define-key map (kbd "M-<f4>") 'save-buffers-kill-terminal)
   (define-key map "\M-fx" 'save-buffers-kill-terminal)
+  (define-key map (kbd "<S-Insert>") 'clipboard-yank)
   map)
  "Keymap used by `doc-minor-view-mode'.")
 
@@ -27,7 +28,16 @@
 \\{vscode-mode-map}"
  nil " VSC" vscode-minor-mode-map
  :group 'vscode
- )
+ (if vscode-minor-mode
+  (progn
+   (cua-mode 1)
+   ;; (see "cua on")
+   )
+  (progn
+   (cua-mode 0)
+   ;; (see "cua off")
+   )
+  ))
 
 ;; cua-mode
 
