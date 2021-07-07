@@ -24,7 +24,7 @@
  "Keymap used by `doc-minor-view-mode'.")
 
 (define-minor-mode vscode-minor-mode
- "VSCode buffer local compatibility mode for using VSCode bindings in Emacs.
+ "VSCode minor mode for using VSCode bindings in Emacs.
 \\{vscode-mode-map}"
  nil " VSC" vscode-minor-mode-map
  :group 'vscode
@@ -39,6 +39,6 @@
    )
   ))
 
-;; cua-mode
-
+(require 'vscode-keybindings-parser)
 (provide 'vscode-mode)
+
