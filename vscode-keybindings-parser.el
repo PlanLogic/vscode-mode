@@ -1,9 +1,9 @@
-;; (require 'json)
-(load "/usr/share/emacs/26.1/lisp/json.el.gz")
-
 ;; from https://github.com/codebling/vs-code-default-keybindings
 (setq vscode-mode-keybindings-json-file "/var/lib/myfrdcsa/sandbox/vs-code-default-keybindings-20210707/vs-code-default-keybindings-20210707/windows.keybindings.json")
 (setq vscode-mode-negative-keybindings-json-file "/var/lib/myfrdcsa/sandbox/vs-code-default-keybindings-20210707/vs-code-default-keybindings-20210707/windows.negative.keybindings.json")
+
+;; (require 'json)
+(load "/usr/share/emacs/26.1/lisp/json.el.gz")
 
 (defun vscode-minor-mode-parse-keybindings-json-file-debug ()
  ""
@@ -23,4 +23,3 @@
 ;; (vscode-minor-mode-parse-keybindings-json-file vscode-mode-negative-keybindings-json-file)
 
 (provide 'vscode-keybindings-parser)
-

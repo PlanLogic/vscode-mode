@@ -39,6 +39,7 @@
    )
   ))
 
+(add-to-list 'load-path vscode-mode-dir)
 (require 'vscode-keybindings-parser)
 (provide 'vscode-mode)
 
