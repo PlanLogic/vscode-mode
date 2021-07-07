@@ -14,3 +14,18 @@ Kind of. I haven't found a VSCode emacs package that does more than superficiall
  )
 
 (https://krsoninikhil.github.io/2018/12/15/easy-moving-from-vscode-to-emacs/)
+(https://www.admiralbumblebee.com/programming/2020/01/04/Six-months-VS-Code.html)
+
+(incorporate wordperfect-mode stuff
+ "Like its 1970s predecessor Emacs and mid-1980s competitor,
+ MultiMate, WordPerfect used almost every possible combination of
+ function keys with Ctrl, Alt, and Shift modifiers, and the
+ CtrlAlt, ShiftAlt, and ShiftCtrl double modifiers, unlike early
+ versions of WordStar, which used only Ctrl.[17]"
+ )
+
+(integration of external vscode features implemented in external repos
+
+ )
+
+(https://towardsdatascience.com/jypyter-notebook-shortcuts-bf0101a98330)
