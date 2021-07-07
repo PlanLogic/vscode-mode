@@ -17,3 +17,5 @@ correct path to the vscode-mode dir:
 (add-to-list 'load-path "/var/lib/myfrdcsa/collaborative/git/vscode-mode")
 (require 'vscode-init)
 ```
+
+Then enable global-vscode-mode with C-c v
