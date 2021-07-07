@@ -13,5 +13,7 @@ This mode is UNDER CONSTRUCTION.
 Replace the /var/lib/myfrdcsa/collaborative/git/vscode-mode with the
 correct path to the vscode-mode dir:
 
-```(add-to-list 'load-path "/var/lib/myfrdcsa/collaborative/git/vscode-mode")
-(require 'vscode-init)```
+```
+(add-to-list 'load-path "/var/lib/myfrdcsa/collaborative/git/vscode-mode")
+(require 'vscode-init)
+```
