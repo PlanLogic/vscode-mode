@@ -40,23 +40,18 @@
 ;;     (vscode-mode)
 ;;     ))))
 
-(define-globalized-minor-mode global-vscode-mode vscode-mode vscode-mode-on)
+;; (define-globalized-minor-mode global-vscode-mode vscode-mode vscode-mode-on)
 
 (define-derived-mode vscode-mode
  cua-mode "VSCode"
  "VSCode buffer local compatibility mode for using VSCode bindings in Emacs.
 \\{vscode-mode-map}"
- (cond
-  (vscode-mode
-   (setq case-fold-search nil)
-   (define-key vscode-mode-map "\C-z" 'undo)
-   (define-key vscode-mode-map [f1] 'help)
-   (define-key vscode-mode-map (kbd "M-<f4>") 'save-buffers-kill-terminal)
-   (define-key vscode-mode-map "\M-fx" 'save-buffers-kill-terminal)
-   )
-  (nil
-   (cua-mode 0)
-   )))
+ (setq case-fold-search nil)
+ (define-key vscode-mode-map "\C-z" 'undo)
+ (define-key vscode-mode-map [f1] 'help)
+ (define-key vscode-mode-map (kbd "M-<f4>") 'save-buffers-kill-terminal)
+ (define-key vscode-mode-map "\M-fx" 'save-buffers-kill-terminal)
+ )
 
 ;; (defun vscode-define-keys-for-mode (mode)
 ;;  (define-key mode "" 'vscode-mode-)
