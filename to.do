@@ -29,3 +29,6 @@ Kind of. I haven't found a VSCode emacs package that does more than superficiall
  )
 
 (https://towardsdatascience.com/jypyter-notebook-shortcuts-bf0101a98330)
+(https://github.com/ryanprior/ed-mode/)
+(https://marketplace.visualstudio.com/items?itemName=tuttieee.emacs-mcx)
+(https://github.com/whitphx/vscode-emacs-mcx)
