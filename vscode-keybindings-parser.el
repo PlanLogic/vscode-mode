@@ -13,7 +13,16 @@
 ;; forward VSCode Keybindings -> VSCode Commands
 ;; reverse Emacs Keybindings -> VSCode Commands
 
-;; so you do forward*(reverse^-1)
+;; we need to figure out which Emacs functions to invoke for which
+;; VSCode Keybindings.
+
+;; (key-binding "\C-cvv")
+;; (lookup-key vscode-minor-mode-map "\C-cvr")
+
+;; so you do:
+
+;; emacs-function-to-invoke =
+;; lookup-key((reverse^-1)*(forward(translate-to-emacs-style(vscode-style-key-sequence)))).
 
 (defvar vscode-mode-forward-keybindings-json-parse nil "")
 (defvar vscode-mode-reverse-keybindings-json-parse nil "")
