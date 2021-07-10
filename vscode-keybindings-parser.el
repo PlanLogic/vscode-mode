@@ -191,20 +191,23 @@
 
 ;; now compute 
 
-(setq forward-commands nil)
-(mapcar (lambda (item) (add-to-list 'forward-commands (cons (car (cdr (assoc 'command (car item)))) item))) (compute-forward-keybindings))
-(setq reverse-commands nil)
-(mapcar (lambda (item) (add-to-list 'reverse-commands (cons (car (cdr (assoc 'command (car item)))) item))) (compute-reverse-keybindings))
+(if nil
+ (progn
+  (setq forward-commands nil)
+  (mapcar (lambda (item) (add-to-list 'forward-commands (cons (car (cdr (assoc 'command (car item)))) item))) (compute-forward-keybindings))
+  (setq reverse-commands nil)
+  (mapcar (lambda (item) (add-to-list 'reverse-commands (cons (car (cdr (assoc 'command (car item)))) item))) (compute-reverse-keybindings))
 
-;; (vscode-mode-command/references-view\.showCallHierarchy ("S-M-h" (command vscode-mode-command/references-view\.showCallHierarchy) (when-orig . "editorHasCallHierarchyProvider") (when vscode-mode-cond/editorHasCallHierarchyProvider)))
+  ;; (vscode-mode-command/references-view\.showCallHierarchy ("S-M-h" (command vscode-mode-command/references-view\.showCallHierarchy) (when-orig . "editorHasCallHierarchyProvider") (when vscode-mode-cond/editorHasCallHierarchyProvider)))
 
-(setq all- matches nil)
-(mapcar (lambda (item)
-	 (let ((list-a (vscode-mode-find-all-items (car item) forward-commands))
-	       (list-b (vscode-mode-find-all-items (car item) reverse-commands)))
-	  (if (and list-a list-b)
-	   (add-to-list 'all-matches (see (list list-a list-b) 0.0)))))
- forward-commands)
+  (setq all-matches nil)
+  (mapcar (lambda (item)
+	   (let ((list-a (vscode-mode-find-all-items (car item) forward-commands))
+		 (list-b (vscode-mode-find-all-items (car item) reverse-commands)))
+	    (if (and list-a list-b)
+	     (add-to-list 'all-matches (see (list list-a list-b) 0.0)))))
+   forward-commands)
+  ))
 
 (defun vscode-mode-find-all-items (symbol commands)
  (progn
@@ -239,6 +242,6 @@
    forward-commands)
   command-mapping-alist))
        
-(vscode-mode-compute-vscode-style-keybindings)
+;; (vscode-mode-compute-vscode-style-keybindings)
 
 (provide 'vscode-keybindings-parser)

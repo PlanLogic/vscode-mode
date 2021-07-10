@@ -4,14 +4,30 @@
   :group 'emulations
   :link '(url-link :tag "Github" "https://github.com/planlogic/vscode-mode"))
 
-(global-set-key "\C-cv" 'global-vscode-mode)
+(global-set-key "\C-cv" 'global-vscode-mode-toggle)
 
-(defun vscode-minor-mode-on ()
+(defun global-vscode-mode-toggle ()
  ""
  (interactive)
- (vscode-minor-mode 1))
+ (if global-vscode-mode
+  (global-vscode-mode-off)
+  (global-vscode-mode-on)))
 
-(defun vscode-minor-mode-off ()
+(defun global-vscode-mode-on ()
+ ""
+ (interactive)
+ (global-vscode-mode 1)
+ (global-display-line-numbers-mode 1)
+ (see "turned on global vscode mode"))
+
+(defun global-vscode-mode-off ()
+ ""
+ (interactive)
+ (global-vscode-mode 0)
+ (global-display-line-numbers-mode 0)
+ (see "turned off global vscode mode"))
+
+(defun vscode-minor-mode-on ()
  ""
  (interactive)
  (vscode-minor-mode 0))
@@ -48,3 +64,5 @@
 (add-to-list 'load-path vscode-mode-dir)
 (require 'vscode-keybindings-parser)
 (provide 'vscode-mode)
+
+(global-vscode-mode-on)

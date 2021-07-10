@@ -32,3 +32,8 @@ Kind of. I haven't found a VSCode emacs package that does more than superficiall
 (https://github.com/ryanprior/ed-mode/)
 (https://marketplace.visualstudio.com/items?itemName=tuttieee.emacs-mcx)
 (https://github.com/whitphx/vscode-emacs-mcx)
+
+(http://ergoemacs.org/emacs/emacs_line_number_mode.html)
+(https://www.gnu.org/software/emacs/manual/html_node/emacs/Tab-Bars.html)
+
+(https://github.com/jojojames/vscode-icon-emacs)
