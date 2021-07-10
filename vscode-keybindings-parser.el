@@ -248,14 +248,14 @@
 	      (push (see (cons (car list-a) (list (cdr list-a))) 0.0) forward-matches)
 	      (if (> (length list-b) 1)
 	       (push (see (cons (car list-b) (list (cdr list-b))) 0.0) reverse-matches))))))
-   ;; forward-commands
-   reverse-commands
+   forward-commands
+   ;; reverse-commands
    )))
 
 (defun vscode-mode-regenerate-matchmaking (&optional arg)
  ""
  (interactive "P")
- (if (not arg) (vscode-mode-reset-commands))
+ (if arg (vscode-mode-reset-commands))
  (vscode-mode-compute-vscode-style-keybindings)
  ;; all-matches
  ;; forward-matches
