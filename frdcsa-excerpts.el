@@ -23,9 +23,15 @@
     (insert-file-contents filePath)
    (buffer-string)))
 
-(defun see (data &optional duration)                                                                                                                                                                                                                                                                                      
- ""                                                                                                                                                                                                                                                                                                                       
- (interactive)                                                                                                                                                                                                                                                                                                            
- (message (prin1-to-string data))                                                                                                                                                                                                                                                                                         
- (sit-for (if duration duration 2.0))                                                                                                                                                                                                                                                                                     
+(defun see (data &optional duration)
+ ""
+ (interactive)
+ (message (prin1-to-string data))
+ (sit-for (if duration duration 2.0))
  data)
+
+(defun non-nil (arg)
+ (if (symbolp arg)
+  (and (boundp arg)
+   (not (equal arg nil)))
+  t))

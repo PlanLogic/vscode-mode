@@ -3,8 +3,8 @@
 (setq vscode-mode-forward-negative-keybindings-json-file "/var/lib/myfrdcsa/sandbox/vs-code-default-keybindings-20210707/vs-code-default-keybindings-20210707/windows.negative.keybindings.json")
 
 ;; from https://github.com/whitphx/vscode-emacs-mcx/blob/7e81757ec668f0aa0d3fb59f4c700fe432d59bc9/package.json
-(setq vscode-mode-reverse-keybindings-json-file "/var/lib/myfrdcsa/collaborative/git/vscode-mode/data/keybindings.reverse.json")
-(setq vscode-mode-reverse-negative-keybindings-json-file "/var/lib/myfrdcsa/collaborative/git/vscode-mode/data/keybindings.negative.reverse.json")
+(setq vscode-mode-reverse-keybindings-json-file (concat vscode-mode-dir "/data/keybindings.reverse.json"))
+(setq vscode-mode-reverse-negative-keybindings-json-file (concat vscode-mode-dir "/data/keybindings.negative.reverse.json"))
 
 ;; forward VSCode Keybindings -> VSCode Commands
 ;; reverse Emacs Keybindings -> VSCode Commands
@@ -23,8 +23,6 @@
   (insert "\n")
   (beginning-of-buffer)
   (json-read)))
-
-
 
 (defun vscode-minor-mode-parse-key-sequences-json-file (file)
  ""
@@ -65,25 +63,27 @@
    ;; ("end" . "<end>")
    ))   
 
-
 (defun vscode-mode-reverse-key-sequence (item)
  ""
  ;; (see key-sequence)
- (let ((key (cdr (assoc 'key item)))
-       (command (cdr (assoc 'command item)))
-       (when (cdr (assoc 'when item)))
-       (args (cdr (assoc 'args item))))
+ (let* ((key (cdr (assoc 'key item)))
+	(emacs-key (vscode-mode-parse-vscode-style-key key))
+	(command (cdr (assoc 'command item)))
+	(when (cdr (assoc 'when item)))
+	(args (cdr (assoc 'args item))))
   (if (not (string= key "%"))
    (list
     (cons
-     (vscode-mode-parse-vscode-style-key key)
+     emacs-key
      (list
+      (cons 'key emacs-key)
       (cons
        'command
        (vscode-mode-parse-vscode-style-command command))
       (cons 'when-orig when)
       (cons 'when 
-       (vscode-mode-parse-vscode-style-when when)))))      
+       (vscode-mode-parse-vscode-style-when when))
+      (cons 'args args))))      
    nil)))
  
 (defun vscode-mode-parse-vscode-style-key (key)
@@ -192,8 +192,8 @@
 ;; now compute 
 
 (defun vscode-mode-find-all-items (symbol commands)
- (progn
-  (setq matches nil)
+ (let
+  ((matches nil))
   (mapcar (lambda (forward-command-item)
 	   (if (string= (prin1-to-string symbol) (prin1-to-string (car forward-command-item)))
 	    (let ((my-list (car (cdr forward-command-item))))
@@ -205,11 +205,13 @@
 (defun vscode-mode-compute-vscode-style-keybindings ()
  ""
  (progn
-  (if (not forward-commands) 
+  ;; (setq forward-commands nil)
+  ;; (setq reverse-commands nil)
+  (if (not (non-nil 'forward-commands))
    (progn
     (setq forward-commands nil)
     (mapcar (lambda (item) (add-to-list 'forward-commands (cons (car (cdr (assoc 'command (car item)))) item))) (compute-forward-keybindings))))
-  (if (not reverse-commands)
+  (if (not (non-nil 'reverse-commands))
    (progn
     (setq reverse-commands nil)
     (mapcar (lambda (item) (add-to-list 'reverse-commands (cons (car (cdr (assoc 'command (car item)))) item))) (compute-reverse-keybindings))))
@@ -223,16 +225,16 @@
 	   (let ((list-a (vscode-mode-find-all-items (car item) forward-commands))
 		 (list-b (vscode-mode-find-all-items (car item) reverse-commands)))
 	    (if (and (> (length list-a) 1) (> (length list-b) 1))
-	     (add-to-list 'all-matches (see (cons (car list-a) (list (cdr list-a) (cdr list-b))) 0.0))
+	     (push (see (cons (car list-a) (list (cdr list-a) (cdr list-b))) 0.0) all-matches)
 	     (if (> (length list-a) 1)
-	      (add-to-list 'forward-matches (see (cons (car list-a) (list (cdr list-a))) 0.0))
+	      (push (see (cons (car list-a) (list (cdr list-a))) 0.0) forward-matches)
 	      (if (> (length list-b) 1)
-	       (add-to-list 'reverse-matches (see (cons (car list-b) (list (cdr list-b))) 0.0)))))))
+	       (push (see (cons (car list-b) (list (cdr list-b))) 0.0) reverse-matches))))))
    forward-commands)))
 
 ;; (vscode-mode-compute-vscode-style-keybindings)
 ;; all-matches
 ;; forward-matches
-;; reverse--matches
+;; reverse-matches
 
 (provide 'vscode-keybindings-parser)

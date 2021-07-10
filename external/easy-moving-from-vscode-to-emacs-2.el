@@ -43,13 +43,17 @@
 
 ;;;;;;;;;;;;;;; section
 
-(require 'multiple-cursors)
-(global-set-key (kbd "C-|") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
-(define-key mc/keymap (kbd "<return>") nil)
+(condition-case nil
+ (progn
+  (require 'multiple-cursors)
+  (global-set-key (kbd "C-|") 'mc/edit-lines)
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+  (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+  (define-key mc/keymap (kbd "<return>") nil)
+  )
+ (error nil))
 
 ;;;;;;;;;;;;;;; section
 
@@ -57,20 +61,28 @@
 
 ;;;;;;;;;;;;;;; section
 
-(require 'projectile)
-(setq projectile-indexing-method 'alien)
-(setq projectile-enable-caching t)
-(projectile-global-mode)
+(condition-case nil
+ (progn
+  (require 'projectile)
+  (setq projectile-indexing-method 'alien)
+  (setq projectile-enable-caching t)
+  (projectile-global-mode)
+  )
+ (error nil))
 
-(require 'helm)
-(require 'helm-config)
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-unset-key (kbd "C-x c"))
-(helm-autoresize-mode 1)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(setq helm-M-x-fuzzy-match t)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(helm-mode 1)
+(condition-case nil
+ (progn
+  (require 'helm)
+  (require 'helm-config)
+  (global-set-key (kbd "C-c h") 'helm-command-prefix)
+  (global-unset-key (kbd "C-x c"))
+  (helm-autoresize-mode 1)
+  (global-set-key (kbd "M-x") 'helm-M-x)
+  (setq helm-M-x-fuzzy-match t)
+  (global-set-key (kbd "C-x C-f") 'helm-find-files)
+  (helm-mode 1)
+  )
+ (error nil))
 
 ;;;;;;;;;;;;;;; section
 
@@ -82,7 +94,11 @@
 
 ;;;;;;;;;;;;;;; section
 
-(dumb-jump-mode)
+(condition-case nil
+ (progn
+  (dumb-jump-mode)
+  )
+ (error nil))
 
 ;;;;;;;;;;;;;;; section
 
@@ -91,7 +107,11 @@
 ;;;;;;;;;;;;;;; section
 
 ;; https://github.com/krsoninikhil/dotfiles/tree/master/.emacs.d
-(add-to-list 'load-path "~/.emacs.d/user-lisp")
-(require 'defuns)
+(condition-case nil
+ (progn
+  (add-to-list 'load-path "~/.emacs.d/user-lisp")
+  (require 'defuns)
+  )
+ (error nil))
 
 ;; End From https://krsoninikhil.github.io/2018/12/15/easy-moving-from-vscode-to-emacs/
