@@ -20,5 +20,6 @@
 (load (concat vscode-mode-dir "/external/code/defuns.el"))
 (load (concat vscode-mode-dir "/external/easy-moving-from-vscode-to-emacs-2.el"))
 (load (concat vscode-mode-dir "/vscode-mode.el"))
+(load (concat vscode-mode-dir "/kmax-excerpt.el"))
 
 (provide 'vscode-init)
