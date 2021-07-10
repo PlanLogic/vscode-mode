@@ -1,13 +1,19 @@
 ;; from https://github.com/codebling/vs-code-default-keybindings
 (setq vscode-mode-forward-keybindings-json-file (concat vscode-mode-dir "/data/windows.keybindings.json"))
+;; (ffap (concat vscode-mode-dir "/data/windows.keybindings.json"))
 (setq vscode-mode-forward-negative-keybindings-json-file (concat vscode-mode-dir "/data/windows.negative.keybindings.json"))
+;; (ffap (concat vscode-mode-dir "/data/windows.negative.keybindings.json"))
 
 ;; from https://github.com/whitphx/vscode-emacs-mcx/blob/7e81757ec668f0aa0d3fb59f4c700fe432d59bc9/package.json
 (setq vscode-mode-reverse-keybindings-json-file (concat vscode-mode-dir "/data/keybindings.reverse.json"))
+;; (ffap (concat vscode-mode-dir "/data/keybindings.reverse.json"))
 (setq vscode-mode-reverse-negative-keybindings-json-file (concat vscode-mode-dir "/data/keybindings.negative.reverse.json"))
+;; (ffap (concat vscode-mode-dir "/data/keybindings.negative.reverse.json"))
 
 ;; forward VSCode Keybindings -> VSCode Commands
 ;; reverse Emacs Keybindings -> VSCode Commands
+
+;; so you do forward*(reverse^-1)
 
 (defvar vscode-mode-forward-keybindings-json-parse nil "")
 (defvar vscode-mode-reverse-keybindings-json-parse nil "")
@@ -34,14 +40,14 @@
  (see-if "Start" 0.0)
  (setq vscode-mode-forward-keybindings-json-parse
   (vscode-minor-mode-parse-key-sequences-json-file vscode-mode-forward-keybindings-json-file))
- (see (mapcar (lambda (item) (vscode-mode-reverse-key-sequence item)) vscode-mode-forward-keybindings-json-parse)))
+ (see (mapcar (lambda (item) (vscode-mode-reverse-key-sequence item)) vscode-mode-forward-keybindings-json-parse) 1.0))
 
 (defun compute-reverse-keybindings ()
  ""
  (see-if "Start" 0.0)
  (setq vscode-mode-reverse-keybindings-json-parse
   (vscode-minor-mode-parse-key-sequences-json-file vscode-mode-reverse-keybindings-json-file))
- (see (mapcar (lambda (item) (vscode-mode-reverse-key-sequence item)) vscode-mode-reverse-keybindings-json-parse)))
+ (see (mapcar (lambda (item) (vscode-mode-reverse-key-sequence item)) vscode-mode-reverse-keybindings-json-parse) 1.0))
 
 ;; (defvar vscode-mode-vscode-style-key-to-emacs-style-key-mapping-alist
 (setq vscode-mode-vscode-style-key-to-emacs-style-key-mapping-alist
@@ -233,7 +239,9 @@
 	      (push (see (cons (car list-a) (list (cdr list-a))) 0.0) forward-matches)
 	      (if (> (length list-b) 1)
 	       (push (see (cons (car list-b) (list (cdr list-b))) 0.0) reverse-matches))))))
-   forward-commands)))
+   ;; forward-commands
+   reverse-commands
+   )))
 
 (defun vscode-mode-regenerate-matchmaking (&optional arg)
  ""
