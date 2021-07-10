@@ -6,6 +6,7 @@
 
 (global-set-key "\C-cv" 'global-vscode-mode-toggle)
 
+
 (defun global-vscode-mode-toggle ()
  ""
  (interactive)
@@ -17,6 +18,7 @@
  ""
  (interactive)
  (global-vscode-mode 1)
+ (global-hl-line-mode 1)
  (global-display-line-numbers-mode 1)
  (see "turned on global vscode mode"))
 
@@ -24,6 +26,7 @@
  ""
  (interactive)
  (global-vscode-mode 0)
+ (global-hl-line-mode 0)
  (global-display-line-numbers-mode 0)
  (see "turned off global vscode mode"))
 
@@ -62,7 +65,9 @@
   ))
 
 (add-to-list 'load-path vscode-mode-dir)
-(require 'vscode-keybindings-parser)
-(provide 'vscode-mode)
 
-(global-vscode-mode-on)
+(require 'vscode-keybindings-parser)
+
+(require 'hl-line) 
+
+(provide 'vscode-mode)

@@ -37,3 +37,5 @@ Kind of. I haven't found a VSCode emacs package that does more than superficiall
 (https://www.gnu.org/software/emacs/manual/html_node/emacs/Tab-Bars.html)
 
 (https://github.com/jojojames/vscode-icon-emacs)
+
+(https://www.emacswiki.org/emacs/HighlightCurrentLine)
