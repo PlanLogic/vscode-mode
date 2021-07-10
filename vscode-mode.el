@@ -4,7 +4,7 @@
   :group 'emulations
   :link '(url-link :tag "Github" "https://github.com/planlogic/vscode-mode"))
 
-(global-set-key "\C-cv" 'global-vscode-mode-toggle)
+(global-set-key "\C-cvv" 'global-vscode-mode-toggle)
 
 
 (defun global-vscode-mode-toggle ()
@@ -33,7 +33,7 @@
 (defun vscode-minor-mode-on ()
  ""
  (interactive)
- (vscode-minor-mode 0))
+ (vscode-minor-mode 1))
 
 (define-globalized-minor-mode global-vscode-mode vscode-minor-mode vscode-minor-mode-on)
 
@@ -45,6 +45,9 @@
   (define-key map (kbd "M-<f4>") 'save-buffers-kill-terminal)
   (define-key map "\M-fx" 'save-buffers-kill-terminal)
   (define-key map (kbd "<S-Insert>") 'clipboard-yank)
+
+  (define-key map "\C-cvr" 'vscode-mode-regenerate-matchmaking)
+
   map)
  "Keymap used by `doc-minor-view-mode'.")
 

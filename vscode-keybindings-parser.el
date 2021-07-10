@@ -1,6 +1,6 @@
 ;; from https://github.com/codebling/vs-code-default-keybindings
-(setq vscode-mode-forward-keybindings-json-file "/var/lib/myfrdcsa/sandbox/vs-code-default-keybindings-20210707/vs-code-default-keybindings-20210707/windows.keybindings.json")
-(setq vscode-mode-forward-negative-keybindings-json-file "/var/lib/myfrdcsa/sandbox/vs-code-default-keybindings-20210707/vs-code-default-keybindings-20210707/windows.negative.keybindings.json")
+(setq vscode-mode-forward-keybindings-json-file (concat vscode-mode-dir "/data/windows.keybindings.json"))
+(setq vscode-mode-forward-negative-keybindings-json-file (concat vscode-mode-dir "/data/windows.negative.keybindings.json"))
 
 ;; from https://github.com/whitphx/vscode-emacs-mcx/blob/7e81757ec668f0aa0d3fb59f4c700fe432d59bc9/package.json
 (setq vscode-mode-reverse-keybindings-json-file (concat vscode-mode-dir "/data/keybindings.reverse.json"))
@@ -197,24 +197,27 @@
   (mapcar (lambda (forward-command-item)
 	   (if (string= (prin1-to-string symbol) (prin1-to-string (car forward-command-item)))
 	    (let ((my-list (car (cdr forward-command-item))))
-	     (add-to-list 'matches (cons (car my-list) (list (cdr my-list))))
+	     (push (cons (car my-list) (list (cdr my-list))) matches)
 	     )))
    commands)
   (cons symbol matches)))
 
+(defun vscode-mode-reset-commands ()
+ ""
+ (makunbound 'forward-commands)
+ (makunbound 'reverse-commands))
+
 (defun vscode-mode-compute-vscode-style-keybindings ()
  ""
  (progn
-  ;; (setq forward-commands nil)
-  ;; (setq reverse-commands nil)
   (if (not (non-nil 'forward-commands))
    (progn
     (setq forward-commands nil)
-    (mapcar (lambda (item) (add-to-list 'forward-commands (cons (car (cdr (assoc 'command (car item)))) item))) (compute-forward-keybindings))))
+    (mapcar (lambda (item) (push (cons (car (cdr (assoc 'command (car item)))) item) forward-commands)) (compute-forward-keybindings))))
   (if (not (non-nil 'reverse-commands))
    (progn
     (setq reverse-commands nil)
-    (mapcar (lambda (item) (add-to-list 'reverse-commands (cons (car (cdr (assoc 'command (car item)))) item))) (compute-reverse-keybindings))))
+    (mapcar (lambda (item) (push (cons (car (cdr (assoc 'command (car item)))) item) reverse-commands)) (compute-reverse-keybindings))))
 
   ;; (vscode-mode-command/references-view\.showCallHierarchy ("S-M-h" (command vscode-mode-command/references-view\.showCallHierarchy) (when-orig . "editorHasCallHierarchyProvider") (when vscode-mode-cond/editorHasCallHierarchyProvider)))
 
@@ -232,9 +235,16 @@
 	       (push (see (cons (car list-b) (list (cdr list-b))) 0.0) reverse-matches))))))
    forward-commands)))
 
-;; (vscode-mode-compute-vscode-style-keybindings)
-;; all-matches
-;; forward-matches
-;; reverse-matches
+(defun vscode-mode-regenerate-matchmaking (&optional arg)
+ ""
+ (interactive "P")
+ (if (not arg) (vscode-mode-reset-commands))
+ (vscode-mode-compute-vscode-style-keybindings)
+ ;; all-matches
+ ;; forward-matches
+ ;; reverse-matches
+ )
+
+;; (vscode-mode-regenerate-matchmaking)
 
 (provide 'vscode-keybindings-parser)
