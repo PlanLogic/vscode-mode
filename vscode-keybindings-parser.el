@@ -191,24 +191,6 @@
 
 ;; now compute 
 
-(if nil
- (progn
-  (setq forward-commands nil)
-  (mapcar (lambda (item) (add-to-list 'forward-commands (cons (car (cdr (assoc 'command (car item)))) item))) (compute-forward-keybindings))
-  (setq reverse-commands nil)
-  (mapcar (lambda (item) (add-to-list 'reverse-commands (cons (car (cdr (assoc 'command (car item)))) item))) (compute-reverse-keybindings))
-
-  ;; (vscode-mode-command/references-view\.showCallHierarchy ("S-M-h" (command vscode-mode-command/references-view\.showCallHierarchy) (when-orig . "editorHasCallHierarchyProvider") (when vscode-mode-cond/editorHasCallHierarchyProvider)))
-
-  (setq all-matches nil)
-  (mapcar (lambda (item)
-	   (let ((list-a (vscode-mode-find-all-items (car item) forward-commands))
-		 (list-b (vscode-mode-find-all-items (car item) reverse-commands)))
-	    (if (and list-a list-b)
-	     (add-to-list 'all-matches (see (list list-a list-b) 0.0)))))
-   forward-commands)
-  ))
-
 (defun vscode-mode-find-all-items (symbol commands)
  (progn
   (setq matches nil)
@@ -222,26 +204,35 @@
 
 (defun vscode-mode-compute-vscode-style-keybindings ()
  ""
- (let* (
-	;; (forward-keybindings (compute-forward-keybindings))
-	;; (forward-commands (mapcar (lambda (item) (cons (car (cdr (assoc 'command (car item)))) (car item))) forward-keybindings))
-	;; (reverse-keybindings (compute-reverse-keybindings))
-	;; (reverse-commands (mapcar (lambda (item) (cons (car (cdr (assoc 'command (car item)))) (car item))) reverse-keybindings))
-	(command-mapping-alist nil)
-	)
-  (mapcar
-   (lambda (forward-command-item)
-    (let ((reverse-command-item (assoc (car forward-command-item) reverse-commands)))
-     (see reverse-command-item 0.1)
-     (if reverse-command-item
-      (add-to-list
-       'command-mapping-alist
-       (cons
-	(cdr forward-command-item)
-	(cdr reverse-command-item))))))
-   forward-commands)
-  command-mapping-alist))
-       
+ (progn
+  (if (not forward-commands) 
+   (progn
+    (setq forward-commands nil)
+    (mapcar (lambda (item) (add-to-list 'forward-commands (cons (car (cdr (assoc 'command (car item)))) item))) (compute-forward-keybindings))))
+  (if (not reverse-commands)
+   (progn
+    (setq reverse-commands nil)
+    (mapcar (lambda (item) (add-to-list 'reverse-commands (cons (car (cdr (assoc 'command (car item)))) item))) (compute-reverse-keybindings))))
+
+  ;; (vscode-mode-command/references-view\.showCallHierarchy ("S-M-h" (command vscode-mode-command/references-view\.showCallHierarchy) (when-orig . "editorHasCallHierarchyProvider") (when vscode-mode-cond/editorHasCallHierarchyProvider)))
+
+  (setq all-matches nil)
+  (setq forward-matches nil)
+  (setq reverse-matches nil)
+  (mapcar (lambda (item)
+	   (let ((list-a (vscode-mode-find-all-items (car item) forward-commands))
+		 (list-b (vscode-mode-find-all-items (car item) reverse-commands)))
+	    (if (and (> (length list-a) 1) (> (length list-b) 1))
+	     (add-to-list 'all-matches (see (cons (car list-a) (list (cdr list-a) (cdr list-b))) 0.0))
+	     (if (> (length list-a) 1)
+	      (add-to-list 'forward-matches (see (cons (car list-a) (list (cdr list-a))) 0.0))
+	      (if (> (length list-b) 1)
+	       (add-to-list 'reverse-matches (see (cons (car list-b) (list (cdr list-b))) 0.0)))))))
+   forward-commands)))
+
 ;; (vscode-mode-compute-vscode-style-keybindings)
+;; all-matches
+;; forward-matches
+;; reverse--matches
 
 (provide 'vscode-keybindings-parser)
