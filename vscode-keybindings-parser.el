@@ -145,28 +145,26 @@
    (see-if
     (or
      ;; empty quotation
-     (and (kmax-string-match-p "^'\\([0-9a-zA-Z\\.]+\\)'$" expr) (and (see-if 1 0.0) (match-string 1 expr)))
+     (and (kmax-string-match-p "^'\\(.*\\)'$" expr) (progn (see-if 1 0.0) (match-string 1 expr)))
 
      ;; literal
-     (and (kmax-string-match-p "^[0-9a-zA-Z\\.]+$" expr) (and (see-if 2 0.0) (vscode-mode-parse-vscode-style-when-literal expr)))
+     (and (kmax-string-match-p "^[-0-9a-zA-Z\\.]+$" expr) (progn (see-if 2 0.0) (vscode-mode-parse-vscode-style-when-literal expr)))
 
      ;; not
-     (and (kmax-string-match-p "^\\!\\([0-9a-zA-Z\\.]+\\)$" expr) (list 'not (vscode-mode-parse-vscode-style-when-literal (and (see-if 3 0.0) (match-string 1 expr)))))
+     (and (kmax-string-match-p "^\\!\\([-0-9a-zA-Z\\.]+\\)$" expr) (list 'not (vscode-mode-parse-vscode-style-when-literal (progn (see-if 3 0.0) (match-string 1 expr)))))
 
      ;; regex
-     (and (kmax-string-match-p expr " =~ ") (cons 'string-match (car (mapcar (lambda (my-list) (and (see-if 4 0.0) (list (vscode-mode-parse-vscode-style-when-expr (car my-list)) (vscode-mode-parse-vscode-style-when-regex (cadr my-list)) nil nil))) (list (kmax-split-string expr " =~ "))))))
+     (and (kmax-string-match-p " =~ " expr) (cons 'string-match (car (mapcar (lambda (my-list) (progn (see-if 4 0.0) (list (vscode-mode-parse-vscode-style-when-expr (car my-list)) (vscode-mode-parse-vscode-style-when-regex (cadr my-list)) nil nil))) (list (kmax-split-string expr " =~ "))))))
 
      ;; equals
-     (and (kmax-string-match-p expr " == ") (cons 'equal (car (mapcar (lambda (my-list) (and (see-if 5 0.0) (list (vscode-mode-parse-vscode-style-when-expr (car my-list)) (vscode-mode-parse-vscode-style-when-expr (cadr my-list))))) (list (kmax-split-string expr " == "))))))
+     (and (kmax-string-match-p " == " expr) (cons 'equal (car (mapcar (lambda (my-list) (progn (see-if 5 0.0) (list (vscode-mode-parse-vscode-style-when-expr (car my-list)) (vscode-mode-parse-vscode-style-when-expr (cadr my-list))))) (list (kmax-split-string expr " == "))))))
 
      ;; not equals
-     (and (kmax-string-match-p expr " != ") (list 'not (cons 'equal (car (mapcar (lambda (my-list) (and (see-if 6 0.0) (list (vscode-mode-parse-vscode-style-when-expr (car my-list)) (vscode-mode-parse-vscode-style-when-expr (cadr my-list))))) (list (kmax-split-string expr " != ")))))))
+     (and (kmax-string-match-p " != " expr) (list 'not (cons 'equal (car (mapcar (lambda (my-list) (progn (see-if 6 0.0) (list (vscode-mode-parse-vscode-style-when-expr (car my-list)) (vscode-mode-parse-vscode-style-when-expr (cadr my-list))))) (list (kmax-split-string expr " != ")))))))
 
      nil
      )
     0.0))))
-
-;; (vscode-mode-parse-vscode-style-when-expr "!test")
 
 (defun vscode-mode-parse-vscode-style-when-literal (literal)
  ""
@@ -183,14 +181,18 @@
   (shift chars)
   (join "" chars)))
 
-;; (progn (kmax-pp-string (prin1-to-string (compute-forward-keybindings))) (emacs-lisp-mode))
+(defun vscode-mode-keybindings-parser-test ()
+ ""
+ (interactive)
+ (progn (kmax-pp-string (prin1-to-string (compute-forward-keybindings))) (emacs-lisp-mode)))
+
+;; (vscode-mode-keybindings-parser-test)
 
 ;; now compute 
 (defun vscode-mode-compute-vscode-style-keybindings ()
  ""
- (let ((forward-keybindings (progn (kmax-pp-string (prin1-to-string (compute-forward-keybindings))) (emacs-lisp-mode)))
+ (let ((forward-keybindings (compute-forward-keybindings))
        (reverse-keybindings (compute-reverse-keybindings))))
  )
-
 
 (provide 'vscode-keybindings-parser)

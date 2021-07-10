@@ -322,7 +322,9 @@
 	 (vscode-mode-cond/refactorPreview\.enabled)
 	 (vscode-mode-cond/refactorPreview\.enabled)
 	 (vscode-mode-cond/refactorPreview\.hasCheckedChanges)
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/focusedView)
+	  "refactorPreview"))))
  (("ESC"
    (command vscode-mode-command/notebook\.cell\.quitEdit)
    (when-orig . "inputFocus && notebookEditorFocused && !editorHasMultipleSelections && !editorHasSelection && !editorHoverVisible")
@@ -417,7 +419,9 @@
 	 (vscode-mode-cond/editorTextFocus)
 	 (not
 	  (vscode-mode-cond/editorReadonly))
-	 nil)))
+	 (string-match
+	  (vscode-mode-cond/supportedCodeAction)
+	  "/(\\s|^)quickfix\\b/" nil nil))))
  (("S-M-a"
    (command vscode-mode-command/editor\.action\.blockComment)
    (when-orig . "editorTextFocus && !editorReadonly")
@@ -491,7 +495,9 @@
 	 (vscode-mode-cond/editorTextFocus)
 	 (not
 	  (vscode-mode-cond/editorReadonly))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/editorLangId)
+	  "jsonc"))))
  (("C-S-k"
    (command vscode-mode-command/editor\.action\.deleteLines)
    (when-orig . "textInputFocus && !editorReadonly")
@@ -526,7 +532,9 @@
 	 (vscode-mode-cond/webviewFindWidgetFocused)
 	 (not
 	  (vscode-mode-cond/editorFocus))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "workbench.editor.extension"))))
  (("S-RET"
    (command vscode-mode-command/editor\.action\.extensioneditor\.findPrevious)
    (when-orig . "webviewFindWidgetFocused && !editorFocus && activeEditor == 'workbench.editor.extension'")
@@ -534,14 +542,18 @@
 	 (vscode-mode-cond/webviewFindWidgetFocused)
 	 (not
 	  (vscode-mode-cond/editorFocus))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "workbench.editor.extension"))))
  (("C-f"
    (command vscode-mode-command/editor\.action\.extensioneditor\.showfind)
    (when-orig . "!editorFocus && activeEditor == 'workbench.editor.extension'")
    (when and
 	 (not
 	  (vscode-mode-cond/editorFocus))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "workbench.editor.extension"))))
  (("S-M-f"
    (command vscode-mode-command/editor\.action\.formatDocument)
    (when-orig . "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor")
@@ -712,7 +724,9 @@
 	 (vscode-mode-cond/editorTextFocus)
 	 (not
 	  (vscode-mode-cond/editorReadonly))
-	 nil)))
+	 (string-match
+	  (vscode-mode-cond/supportedCodeAction)
+	  "/(\\s|^)source\\.organizeImports\\b/" nil nil))))
  (("C-["
    (command vscode-mode-command/editor\.action\.outdentLines)
    (when-orig . "editorTextFocus && !editorReadonly")
@@ -893,7 +907,9 @@
 	 (vscode-mode-cond/webviewFindWidgetFocused)
 	 (not
 	  (vscode-mode-cond/editorFocus))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "WebviewEditor"))))
  (("S-RET"
    (command vscode-mode-command/editor\.action\.webvieweditor\.findPrevious)
    (when-orig . "webviewFindWidgetFocused && !editorFocus && activeEditor == 'WebviewEditor'")
@@ -901,7 +917,9 @@
 	 (vscode-mode-cond/webviewFindWidgetFocused)
 	 (not
 	  (vscode-mode-cond/editorFocus))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "WebviewEditor"))))
  (("ESC"
    (command vscode-mode-command/editor\.action\.webvieweditor\.hideFind)
    (when-orig . "webviewFindWidgetVisible && !editorFocus && activeEditor == 'WebviewEditor'")
@@ -909,14 +927,18 @@
 	 (vscode-mode-cond/webviewFindWidgetVisible)
 	 (not
 	  (vscode-mode-cond/editorFocus))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "WebviewEditor"))))
  (("C-f"
    (command vscode-mode-command/editor\.action\.webvieweditor\.showFind)
    (when-orig . "!editorFocus && activeEditor == 'WebviewEditor'")
    (when and
 	 (not
 	  (vscode-mode-cond/editorFocus))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "WebviewEditor"))))
  (("f7"
    (command vscode-mode-command/editor\.action\.wordHighlight\.next)
    (when-orig . "editorTextFocus && hasWordHighlights")
@@ -1112,7 +1134,14 @@
 	 (vscode-mode-cond/editorTextFocus)
 	 (vscode-mode-cond/inputFocus)
 	 (vscode-mode-cond/notebookEditorFocused)
-	 nil nil)))
+	 (not
+	  (equal
+	   (vscode-mode-cond/notebookEditorCursorAtBoundary)
+	   "none"))
+	 (not
+	  (equal
+	   (vscode-mode-cond/notebookEditorCursorAtBoundary)
+	   "top")))))
  (("<up>"
    (command vscode-mode-command/notebook\.focusPreviousEditor)
    (when-orig . "editorTextFocus && inputFocus && notebookEditorFocused && notebookEditorCursorAtBoundary != 'bottom' && notebookEditorCursorAtBoundary != 'none'")
@@ -1120,7 +1149,14 @@
 	 (vscode-mode-cond/editorTextFocus)
 	 (vscode-mode-cond/inputFocus)
 	 (vscode-mode-cond/notebookEditorFocused)
-	 nil nil)))
+	 (not
+	  (equal
+	   (vscode-mode-cond/notebookEditorCursorAtBoundary)
+	   "bottom"))
+	 (not
+	  (equal
+	   (vscode-mode-cond/notebookEditorCursorAtBoundary)
+	   "none")))))
  (("S-M-f"
    (command vscode-mode-command/notebook\.formatCell)
    (when-orig . "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'")
@@ -1131,7 +1167,9 @@
 	 (vscode-mode-cond/notebookEditable)
 	 (not
 	  (vscode-mode-cond/editorReadonly))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "workbench.editor.notebook"))))
  (("C-RET"
    (command vscode-mode-command/openReferenceToSide)
    (when-orig . "listFocus && referenceSearchVisible && !inputFocus")
@@ -1476,7 +1514,9 @@
 	  (vscode-mode-cond/inSnippetMode))
 	 (not
 	  (vscode-mode-cond/suggestWidgetVisible))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/config\.editor\.tabCompletion)
+	  "on"))))
  (("tab"
    (command vscode-mode-command/insertNextSuggestion)
    (when-orig . "hasOtherSuggestions && textInputFocus && textInputFocus && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'")
@@ -1488,7 +1528,9 @@
 	  (vscode-mode-cond/inSnippetMode))
 	 (not
 	  (vscode-mode-cond/suggestWidgetVisible))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/config\.editor\.tabCompletion)
+	  "on"))))
  (("S-tab"
    (command vscode-mode-command/insertPrevSuggestion)
    (when-orig . "hasOtherSuggestions && textInputFocus && textInputFocus && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'")
@@ -1500,7 +1542,9 @@
 	  (vscode-mode-cond/inSnippetMode))
 	 (not
 	  (vscode-mode-cond/suggestWidgetVisible))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/config\.editor\.tabCompletion)
+	  "on"))))
  (("C-"
    (command vscode-mode-command/selectNextPageSuggestion)
    (when-orig . "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus")
@@ -1767,13 +1811,17 @@
    (when-orig . "callHierarchyVisible && callHierarchyDirection == 'outgoingCalls'")
    (when and
 	 (vscode-mode-cond/callHierarchyVisible)
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/callHierarchyDirection)
+	  "outgoingCalls"))))
  (("S-M-h"
    (command vscode-mode-command/editor\.showOutgoingCalls)
    (when-orig . "callHierarchyVisible && callHierarchyDirection == 'incomingCalls'")
    (when and
 	 (vscode-mode-cond/callHierarchyVisible)
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/callHierarchyDirection)
+	  "incomingCalls"))))
  (("C-RET"
    (command vscode-mode-command/explorer\.openToSide)
    (when-orig . "explorerViewletFocus && explorerViewletVisible && !inputFocus")
@@ -2015,7 +2063,12 @@
 	 (vscode-mode-cond/notebookEditorFocused)
 	 (not
 	  (vscode-mode-cond/inputFocus))
-	 nil nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "workbench.editor.notebook")
+	 (equal
+	  (vscode-mode-cond/notebookCellType)
+	  "markdown"))))
  (("m"
    (command vscode-mode-command/notebook\.cell\.changeToMarkdown)
    (when-orig . "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook' && notebookCellType == 'code'")
@@ -2023,7 +2076,12 @@
 	 (vscode-mode-cond/notebookEditorFocused)
 	 (not
 	  (vscode-mode-cond/inputFocus))
-	 nil nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "workbench.editor.notebook")
+	 (equal
+	  (vscode-mode-cond/notebookCellType)
+	  "code"))))
  (("M-delete"
    (command vscode-mode-command/notebook\.cell\.clearOutputs)
    (when-orig . "notebookCellHasOutputs && notebookEditorFocused && !inputFocus")
@@ -2187,7 +2245,9 @@
 	 (vscode-mode-cond/notebookEditorFocused)
 	 (not
 	  (vscode-mode-cond/inputFocus))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "workbench.editor.notebook"))))
  (("C-S-["
    (command vscode-mode-command/notebook\.fold)
    (when-orig . "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'")
@@ -2195,7 +2255,9 @@
 	 (vscode-mode-cond/notebookEditorFocused)
 	 (not
 	  (vscode-mode-cond/inputFocus))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "workbench.editor.notebook"))))
  (("S-M-f"
    (command vscode-mode-command/notebook\.format)
    (when-orig . "notebookEditable && !editorTextFocus && activeEditor == 'workbench.editor.notebook'")
@@ -2203,7 +2265,9 @@
 	 (vscode-mode-cond/notebookEditable)
 	 (not
 	  (vscode-mode-cond/editorTextFocus))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "workbench.editor.notebook"))))
  (("ESC"
    (command vscode-mode-command/notebook\.hideFind)
    (when-orig . "notebookEditorFocused && notebookFindWidgetFocused")
@@ -2217,7 +2281,9 @@
 	 (vscode-mode-cond/notebookEditorFocused)
 	 (not
 	  (vscode-mode-cond/inputFocus))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "workbench.editor.notebook"))))
  (("C-S-]"
    (command vscode-mode-command/notebook\.unfold)
    (when-orig . "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'")
@@ -2225,7 +2291,9 @@
 	 (vscode-mode-cond/notebookEditorFocused)
 	 (not
 	  (vscode-mode-cond/inputFocus))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/activeEditor)
+	  "workbench.editor.notebook"))))
  (("delete"
    (command vscode-mode-command/notification\.clear)
    (when-orig . "notificationFocus")
@@ -2295,7 +2363,10 @@
  (("C-f"
    (command vscode-mode-command/problems\.action\.focusFilter)
    (when-orig . "focusedView == 'workbench.panel.markers.view'")
-   (when nil)))
+   (when
+    (equal
+     (vscode-mode-cond/focusedView)
+     "workbench.panel.markers.view"))))
  (("C-<down>"
    (command vscode-mode-command/problems\.action\.focusProblemsFromFilter)
    (when-orig . "problemsFilterFocus")
@@ -2676,11 +2747,17 @@
  (("S-f11"
    (command vscode-mode-command/workbench\.action\.debug\.stepOut)
    (when-orig . "debugState == 'stopped'")
-   (when nil)))
+   (when
+    (equal
+     (vscode-mode-cond/debugState)
+     "stopped"))))
  (("f10"
    (command vscode-mode-command/workbench\.action\.debug\.stepOver)
    (when-orig . "debugState == 'stopped'")
-   (when nil)))
+   (when
+    (equal
+     (vscode-mode-cond/debugState)
+     "stopped"))))
  (("S-f5"
    (command vscode-mode-command/workbench\.action\.debug\.stop)
    (when-orig . "inDebugMode")
@@ -3270,7 +3347,9 @@
 	 (vscode-mode-cond/terminalFocus)
 	 (not
 	  (vscode-mode-cond/accessibilityModeEnabled))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/terminalShellType)
+	  "pwsh"))))
  (("C-DEL"
    (command vscode-mode-command/workbench\.action\.terminal\.sendSequence)
    (when-orig . "terminalFocus")
@@ -3281,7 +3360,9 @@
    (when-orig . "terminalFocus && terminalShellType == 'cmd'")
    (when and
 	 (vscode-mode-cond/terminalFocus)
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/terminalShellType)
+	  "cmd"))))
  (("C-delete"
    (command vscode-mode-command/workbench\.action\.terminal\.sendSequence)
    (when-orig . "terminalFocus")
@@ -3490,23 +3571,42 @@
  (("C-k <down>"
    (command vscode-mode-command/views\.moveViewDown)
    (when-orig . "focusedView != ''")
-   (when nil)))
+   (when
+    (not
+     (equal
+      (vscode-mode-cond/focusedView)
+      "")))))
  (("C-k left"
    (command vscode-mode-command/views\.moveViewLeft)
    (when-orig . "focusedView != ''")
-   (when nil)))
+   (when
+    (not
+     (equal
+      (vscode-mode-cond/focusedView)
+      "")))))
  (("C-k right"
    (command vscode-mode-command/views\.moveViewRight)
    (when-orig . "focusedView != ''")
-   (when nil)))
+   (when
+    (not
+     (equal
+      (vscode-mode-cond/focusedView)
+      "")))))
  (("C-k <up>"
    (command vscode-mode-command/views\.moveViewUp)
    (when-orig . "focusedView != ''")
-   (when nil)))
+   (when
+    (not
+     (equal
+      (vscode-mode-cond/focusedView)
+      "")))))
  (("f6"
    (command vscode-mode-command/workbench\.action\.debug\.pause)
    (when-orig . "debugState == 'running'")
-   (when nil)))
+   (when
+    (equal
+     (vscode-mode-cond/debugState)
+     "running"))))
  (("f2"
    (command vscode-mode-command/debug\.renameWatchExpression)
    (when-orig . "watchExpressionsFocused")
@@ -3679,16 +3779,22 @@
    (when or
 	 (and
 	   (vscode-mode-cond/tunnelViewFocus)
-	   nil)
+	   (equal
+	    (vscode-mode-cond/tunnelType)
+	    "Detected"))
 	 (and
 	   (vscode-mode-cond/tunnelViewFocus)
-	   nil))))
+	   (equal
+	    (vscode-mode-cond/tunnelType)
+	    "Forwarded")))))
  (("f2"
    (command vscode-mode-command/remote\.tunnel\.label)
    (when-orig . "tunnelViewFocus && tunnelType == 'Forwarded'")
    (when and
 	 (vscode-mode-cond/tunnelViewFocus)
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/tunnelType)
+	  "Forwarded"))))
  (("f2"
    (command vscode-mode-command/renameFile)
    (when-orig . "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus")
@@ -3704,7 +3810,11 @@
  (("f11"
    (command vscode-mode-command/workbench\.action\.debug\.stepInto)
    (when-orig . "debugState != 'inactive'")
-   (when nil)))
+   (when
+    (not
+     (equal
+      (vscode-mode-cond/debugState)
+      "inactive")))))
  (("S-ESC"
    (command vscode-mode-command/closeReferenceSearch)
    (when-orig . "referenceSearchVisible && !config.editor.stablePeek")
@@ -3811,7 +3921,9 @@
    (when and
 	 (not
 	  (vscode-mode-cond/inDebugMode))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/debugConfigurationType)
+	  "node"))))
  (("C-k C-M-s"
    (command vscode-mode-command/git\.stageSelectedRanges)
    (when-orig . "isInDiffEditor")
@@ -3823,7 +3935,9 @@
    (when and
 	 (not
 	  (vscode-mode-cond/notebookEditorFocused))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/editorLangId)
+	  "markdown"))))
  (("S-M-f12"
    (command vscode-mode-command/references-view\.findReferences)
    (when-orig . "editorHasReferenceProvider")
@@ -3840,11 +3954,15 @@
    (when and
 	 (not
 	  (vscode-mode-cond/notebookEditorFocused))
-	 nil)))
+	 (equal
+	  (vscode-mode-cond/editorLangId)
+	  "markdown"))))
  (("f4"
    (command vscode-mode-command/references-view\.next)
    (when-orig . "reference-list.hasResult && references-view.canNavigate")
-   (when and nil nil)))
+   (when and
+	 (vscode-mode-cond/reference-list\.hasResult)
+	 (vscode-mode-cond/references-view\.canNavigate))))
  (("C-k C-r"
    (command vscode-mode-command/git\.revertSelectedRanges)
    (when-orig . "isInDiffEditor")
@@ -3853,7 +3971,9 @@
  (("S-f4"
    (command vscode-mode-command/references-view\.prev)
    (when-orig . "reference-list.hasResult && references-view.canNavigate")
-   (when and nil nil)))
+   (when and
+	 (vscode-mode-cond/reference-list\.hasResult)
+	 (vscode-mode-cond/references-view\.canNavigate))))
  (("S-M-h"
    (command vscode-mode-command/references-view\.showCallHierarchy)
    (when-orig . "editorHasCallHierarchyProvider")
