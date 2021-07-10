@@ -1,8 +1,7 @@
 ((("ESC ESC"
    (command vscode-mode-command/workbench\.action\.exitZenMode)
    (when-orig . "inZenMode")
-   (when
-    (vscode-mode-cond/inZenMode))))
+   (when vscode-mode-cond/inZenMode)))
  (("S-ESC"
    (command vscode-mode-command/closeReferenceSearch)
    (when-orig . "inReferenceSearchEditor && !config.editor.stablePeek")
@@ -32,158 +31,127 @@
  (("C-end"
    (command vscode-mode-command/cursorBottom)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("C-S-end"
    (command vscode-mode-command/cursorBottomSelect)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("C-S-M-<down>"
    (command vscode-mode-command/cursorColumnSelectDown)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
- (("C-S-M-left"
+   (when vscode-mode-cond/textInputFocus)))
+ (("C-S-M-<left>"
    (command vscode-mode-command/cursorColumnSelectLeft)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("C-S-M-"
    (command vscode-mode-command/cursorColumnSelectPageDown)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("C-S-M-"
    (command vscode-mode-command/cursorColumnSelectPageUp)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
- (("C-S-M-right"
+   (when vscode-mode-cond/textInputFocus)))
+ (("C-S-M-<right>"
    (command vscode-mode-command/cursorColumnSelectRight)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("C-S-M-<up>"
    (command vscode-mode-command/cursorColumnSelectUp)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("<down>"
    (command vscode-mode-command/cursorDown)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("C-S-<down>"
    (command vscode-mode-command/cursorDownSelect)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("S-<down>"
    (command vscode-mode-command/cursorDownSelect)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("end"
    (command vscode-mode-command/cursorEnd)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("S-end"
    (command vscode-mode-command/cursorEndSelect)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("home"
    (command vscode-mode-command/cursorHome)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("S-home"
    (command vscode-mode-command/cursorHomeSelect)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
- (("left"
+   (when vscode-mode-cond/textInputFocus)))
+ (("<left>"
    (command vscode-mode-command/cursorLeft)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
- (("S-left"
+   (when vscode-mode-cond/textInputFocus)))
+ (("S-<left>"
    (command vscode-mode-command/cursorLeftSelect)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  ((""
    (command vscode-mode-command/cursorPageDown)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("S-"
    (command vscode-mode-command/cursorPageDownSelect)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  ((""
    (command vscode-mode-command/cursorPageUp)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("S-"
    (command vscode-mode-command/cursorPageUpSelect)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
- (("right"
+   (when vscode-mode-cond/textInputFocus)))
+ (("<right>"
    (command vscode-mode-command/cursorRight)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
- (("S-right"
+   (when vscode-mode-cond/textInputFocus)))
+ (("S-<right>"
    (command vscode-mode-command/cursorRightSelect)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("C-home"
    (command vscode-mode-command/cursorTop)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("C-S-home"
    (command vscode-mode-command/cursorTopSelect)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("<up>"
    (command vscode-mode-command/cursorUp)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("C-S-<up>"
    (command vscode-mode-command/cursorUpSelect)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("S-<up>"
    (command vscode-mode-command/cursorUpSelect)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("S-DEL"
    (command vscode-mode-command/deleteLeft)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("DEL"
    (command vscode-mode-command/deleteLeft)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("delete"
    (command vscode-mode-command/deleteRight)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("C-a"
    (command vscode-mode-command/editor\.action\.selectAll)
    (when-orig)
@@ -191,8 +159,7 @@
  (("C-l"
    (command vscode-mode-command/expandLineSelection)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("S-tab"
    (command vscode-mode-command/outdent)
    (when-orig . "editorTextFocus && !editorReadonly && !editorTabMovesFocus")
@@ -213,23 +180,19 @@
  (("C-<down>"
    (command vscode-mode-command/scrollLineDown)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("C-<up>"
    (command vscode-mode-command/scrollLineUp)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("M-"
    (command vscode-mode-command/scrollPageDown)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("M-"
    (command vscode-mode-command/scrollPageUp)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("tab"
    (command vscode-mode-command/tab)
    (when-orig . "editorTextFocus && !editorReadonly && !editorTabMovesFocus")
@@ -249,7 +212,7 @@
    (when and
 	 (vscode-mode-cond/editorColumnSelection)
 	 (vscode-mode-cond/textInputFocus))))
- (("S-left"
+ (("S-<left>"
    (command vscode-mode-command/cursorColumnSelectLeft)
    (when-orig . "editorColumnSelection && textInputFocus")
    (when and
@@ -267,7 +230,7 @@
    (when and
 	 (vscode-mode-cond/editorColumnSelection)
 	 (vscode-mode-cond/textInputFocus))))
- (("S-right"
+ (("S-<right>"
    (command vscode-mode-command/cursorColumnSelectRight)
    (when-orig . "editorColumnSelection && textInputFocus")
    (when and
@@ -295,26 +258,26 @@
    (command vscode-mode-command/goToNextReference)
    (when-orig . "inReferenceSearchEditor || referenceSearchVisible")
    (when or
-	 ((vscode-mode-cond/inReferenceSearchEditor))
-	 ((vscode-mode-cond/referenceSearchVisible)))))
+	 (vscode-mode-cond/inReferenceSearchEditor)
+	 (vscode-mode-cond/referenceSearchVisible))))
  (("f4"
    (command vscode-mode-command/goToNextReference)
    (when-orig . "inReferenceSearchEditor || referenceSearchVisible")
    (when or
-	 ((vscode-mode-cond/inReferenceSearchEditor))
-	 ((vscode-mode-cond/referenceSearchVisible)))))
+	 (vscode-mode-cond/inReferenceSearchEditor)
+	 (vscode-mode-cond/referenceSearchVisible))))
  (("S-f12"
    (command vscode-mode-command/goToPreviousReference)
    (when-orig . "inReferenceSearchEditor || referenceSearchVisible")
    (when or
-	 ((vscode-mode-cond/inReferenceSearchEditor))
-	 ((vscode-mode-cond/referenceSearchVisible)))))
+	 (vscode-mode-cond/inReferenceSearchEditor)
+	 (vscode-mode-cond/referenceSearchVisible))))
  (("S-f4"
    (command vscode-mode-command/goToPreviousReference)
    (when-orig . "inReferenceSearchEditor || referenceSearchVisible")
    (when or
-	 ((vscode-mode-cond/inReferenceSearchEditor))
-	 ((vscode-mode-cond/referenceSearchVisible)))))
+	 (vscode-mode-cond/inReferenceSearchEditor)
+	 (vscode-mode-cond/referenceSearchVisible))))
  (("S-RET"
    (command vscode-mode-command/refactorPreview\.apply)
    (when-orig . "refactorPreview.enabled && refactorPreview.enabled && refactorPreview.hasCheckedChanges && focusedView == 'refactorPreview'")
@@ -341,8 +304,8 @@
    (command vscode-mode-command/actions\.find)
    (when-orig . "editorFocus || editorIsOpen")
    (when or
-	 ((vscode-mode-cond/editorFocus))
-	 ((vscode-mode-cond/editorIsOpen)))))
+	 (vscode-mode-cond/editorFocus)
+	 (vscode-mode-cond/editorIsOpen))))
  (("RET"
    (command vscode-mode-command/breakpointWidget\.action\.acceptInput)
    (when-orig . "breakpointWidgetVisible && inBreakpointWidget")
@@ -364,28 +327,23 @@
  (("C-u"
    (command vscode-mode-command/cursorUndo)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
- (("C-right"
+   (when vscode-mode-cond/textInputFocus)))
+ (("C-<right>"
    (command vscode-mode-command/cursorWordEndRight)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
- (("C-S-right"
+   (when vscode-mode-cond/textInputFocus)))
+ (("C-S-<right>"
    (command vscode-mode-command/cursorWordEndRightSelect)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
- (("C-left"
+   (when vscode-mode-cond/textInputFocus)))
+ (("C-<left>"
    (command vscode-mode-command/cursorWordLeft)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
- (("C-S-left"
+   (when vscode-mode-cond/textInputFocus)))
+ (("C-S-<left>"
    (command vscode-mode-command/cursorWordLeftSelect)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("C-DEL"
    (command vscode-mode-command/deleteWordLeft)
    (when-orig . "textInputFocus && !editorReadonly")
@@ -410,8 +368,7 @@
  (("C-d"
    (command vscode-mode-command/editor\.action\.addSelectionToNextFindMatch)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("S-M-."
    (command vscode-mode-command/editor\.action\.autoFix)
    (when-orig . "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/")
@@ -508,23 +465,19 @@
  (("f7"
    (command vscode-mode-command/editor\.action\.diffReview\.next)
    (when-orig . "isInDiffEditor")
-   (when
-    (vscode-mode-cond/isInDiffEditor))))
+   (when vscode-mode-cond/isInDiffEditor)))
  (("S-f7"
    (command vscode-mode-command/editor\.action\.diffReview\.prev)
    (when-orig . "isInDiffEditor")
-   (when
-    (vscode-mode-cond/isInDiffEditor))))
+   (when vscode-mode-cond/isInDiffEditor)))
  (("M-f3"
    (command vscode-mode-command/editor\.action\.dirtydiff\.next)
    (when-orig . "editorTextFocus")
-   (when
-    (vscode-mode-cond/editorTextFocus))))
+   (when vscode-mode-cond/editorTextFocus)))
  (("S-M-f3"
    (command vscode-mode-command/editor\.action\.dirtydiff\.previous)
    (when-orig . "editorTextFocus")
-   (when
-    (vscode-mode-cond/editorTextFocus))))
+   (when vscode-mode-cond/editorTextFocus)))
  (("RET"
    (command vscode-mode-command/editor\.action\.extensioneditor\.findNext)
    (when-orig . "webviewFindWidgetFocused && !editorFocus && activeEditor == 'workbench.editor.extension'")
@@ -623,18 +576,15 @@
  (("C-M-<up>"
    (command vscode-mode-command/editor\.action\.insertCursorAbove)
    (when-orig . "editorTextFocus")
-   (when
-    (vscode-mode-cond/editorTextFocus))))
+   (when vscode-mode-cond/editorTextFocus)))
  (("S-M-i"
    (command vscode-mode-command/editor\.action\.insertCursorAtEndOfEachLineSelected)
    (when-orig . "editorTextFocus")
-   (when
-    (vscode-mode-cond/editorTextFocus))))
+   (when vscode-mode-cond/editorTextFocus)))
  (("C-M-<down>"
    (command vscode-mode-command/editor\.action\.insertCursorBelow)
    (when-orig . "editorTextFocus")
-   (when
-    (vscode-mode-cond/editorTextFocus))))
+   (when vscode-mode-cond/editorTextFocus)))
  (("C-RET"
    (command vscode-mode-command/editor\.action\.insertLineAfter)
    (when-orig . "editorTextFocus && !editorReadonly")
@@ -652,8 +602,7 @@
  (("C-S-\\"
    (command vscode-mode-command/editor\.action\.jumpToBracket)
    (when-orig . "editorTextFocus")
-   (when
-    (vscode-mode-cond/editorTextFocus))))
+   (when vscode-mode-cond/editorTextFocus)))
  (("C-S-f2"
    (command vscode-mode-command/editor\.action\.linkedEditing)
    (when-orig . "editorHasRenameProvider && editorTextFocus && !editorReadonly")
@@ -665,23 +614,19 @@
  (("M-f8"
    (command vscode-mode-command/editor\.action\.marker\.next)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("f8"
    (command vscode-mode-command/editor\.action\.marker\.nextInFiles)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("S-M-f8"
    (command vscode-mode-command/editor\.action\.marker\.prev)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("S-f8"
    (command vscode-mode-command/editor\.action\.marker\.prevInFiles)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("M-<down>"
    (command vscode-mode-command/editor\.action\.moveLinesDownAction)
    (when-orig . "editorTextFocus && !editorReadonly")
@@ -699,13 +644,11 @@
  (("C-k C-d"
    (command vscode-mode-command/editor\.action\.moveSelectionToNextFindMatch)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("f3"
    (command vscode-mode-command/editor\.action\.nextMatchFindAction)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("RET"
    (command vscode-mode-command/editor\.action\.nextMatchFindAction)
    (when-orig . "editorFocus && findInputFocussed")
@@ -715,8 +658,7 @@
  (("C-f3"
    (command vscode-mode-command/editor\.action\.nextSelectionMatchFindAction)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("S-M-o"
    (command vscode-mode-command/editor\.action\.organizeImports)
    (when-orig . "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/")
@@ -757,8 +699,7 @@
  (("S-f3"
    (command vscode-mode-command/editor\.action\.previousMatchFindAction)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("S-RET"
    (command vscode-mode-command/editor\.action\.previousMatchFindAction)
    (when-orig . "editorFocus && findInputFocussed")
@@ -768,8 +709,7 @@
  (("C-S-f3"
    (command vscode-mode-command/editor\.action\.previousSelectionMatchFindAction)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("C-."
    (command vscode-mode-command/editor\.action\.quickFix)
    (when-orig . "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly")
@@ -826,13 +766,11 @@
  (("C-S-l"
    (command vscode-mode-command/editor\.action\.selectHighlights)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("C-k C-b"
    (command vscode-mode-command/editor\.action\.setSelectionAnchor)
    (when-orig . "editorTextFocus")
-   (when
-    (vscode-mode-cond/editorTextFocus))))
+   (when vscode-mode-cond/editorTextFocus)))
  (("M-f1"
    (command vscode-mode-command/editor\.action\.showAccessibilityHelp)
    (when-orig)
@@ -840,29 +778,25 @@
  (("S-f10"
    (command vscode-mode-command/editor\.action\.showContextMenu)
    (when-orig . "textInputFocus")
-   (when
-    (vscode-mode-cond/textInputFocus))))
+   (when vscode-mode-cond/textInputFocus)))
  (("C-k C-i"
    (command vscode-mode-command/editor\.action\.showHover)
    (when-orig . "editorTextFocus")
-   (when
-    (vscode-mode-cond/editorTextFocus))))
- (("S-M-right"
+   (when vscode-mode-cond/editorTextFocus)))
+ (("S-M-<right>"
    (command vscode-mode-command/editor\.action\.smartSelect\.expand)
    (when-orig . "editorTextFocus")
-   (when
-    (vscode-mode-cond/editorTextFocus))))
- (("S-M-left"
+   (when vscode-mode-cond/editorTextFocus)))
+ (("S-M-<left>"
    (command vscode-mode-command/editor\.action\.smartSelect\.shrink)
    (when-orig . "editorTextFocus")
-   (when
-    (vscode-mode-cond/editorTextFocus))))
+   (when vscode-mode-cond/editorTextFocus)))
  (("C-h"
    (command vscode-mode-command/editor\.action\.startFindReplaceAction)
    (when-orig . "editorFocus || editorIsOpen")
    (when or
-	 ((vscode-mode-cond/editorFocus))
-	 ((vscode-mode-cond/editorIsOpen)))))
+	 (vscode-mode-cond/editorFocus)
+	 (vscode-mode-cond/editorIsOpen))))
  (("C-m"
    (command vscode-mode-command/editor\.action\.toggleTabFocusMode)
    (when-orig)
@@ -954,13 +888,11 @@
  (("ESC"
    (command vscode-mode-command/editor\.cancelOperation)
    (when-orig . "cancellableOperation")
-   (when
-    (vscode-mode-cond/cancellableOperation))))
+   (when vscode-mode-cond/cancellableOperation)))
  (("ESC"
    (command vscode-mode-command/editor\.debug\.action\.closeExceptionWidget)
    (when-orig . "exceptionWidgetVisible")
-   (when
-    (vscode-mode-cond/exceptionWidgetVisible))))
+   (when vscode-mode-cond/exceptionWidgetVisible)))
  (("C-k C-i"
    (command vscode-mode-command/editor\.debug\.action\.showDebugHover)
    (when-orig . "editorTextFocus && inDebugMode")
@@ -1058,13 +990,11 @@
  (("f12"
    (command vscode-mode-command/editor\.gotoNextSymbolFromResult)
    (when-orig . "hasSymbols")
-   (when
-    (vscode-mode-cond/hasSymbols))))
+   (when vscode-mode-cond/hasSymbols)))
  (("ESC"
    (command vscode-mode-command/editor\.gotoNextSymbolFromResult\.cancel)
    (when-orig . "hasSymbols")
-   (when
-    (vscode-mode-cond/hasSymbols))))
+   (when vscode-mode-cond/hasSymbols)))
  (("C-k C-l"
    (command vscode-mode-command/editor\.toggleFold)
    (when-orig . "editorTextFocus && foldingEnabled")
@@ -1108,18 +1038,15 @@
  (("C-M-RET"
    (command vscode-mode-command/notebook\.cell\.execute)
    (when-orig . "notebookCellListFocused")
-   (when
-    (vscode-mode-cond/notebookCellListFocused))))
+   (when vscode-mode-cond/notebookCellListFocused)))
  (("M-RET"
    (command vscode-mode-command/notebook\.cell\.executeAndInsertBelow)
    (when-orig . "notebookCellListFocused")
-   (when
-    (vscode-mode-cond/notebookCellListFocused))))
+   (when vscode-mode-cond/notebookCellListFocused)))
  (("S-RET"
    (command vscode-mode-command/notebook\.cell\.executeAndSelectBelow)
    (when-orig . "notebookCellListFocused")
-   (when
-    (vscode-mode-cond/notebookCellListFocused))))
+   (when vscode-mode-cond/notebookCellListFocused)))
  (("C-S-v"
    (command vscode-mode-command/notebook\.cell\.pasteAbove)
    (when-orig . "notebookEditorFocused && !inputFocus")
@@ -1193,18 +1120,15 @@
  (("C-S-r"
    (command vscode-mode-command/rerunSearchEditorSearch)
    (when-orig . "inSearchEditor")
-   (when
-    (vscode-mode-cond/inSearchEditor))))
+   (when vscode-mode-cond/inSearchEditor)))
  (("ESC"
    (command vscode-mode-command/search\.action\.focusQueryEditorWidget)
    (when-orig . "inSearchEditor")
-   (when
-    (vscode-mode-cond/inSearchEditor))))
+   (when vscode-mode-cond/inSearchEditor)))
  (("C-S-DEL"
    (command vscode-mode-command/search\.searchEditor\.action\.deleteFileResults)
    (when-orig . "inSearchEditor")
-   (when
-    (vscode-mode-cond/inSearchEditor))))
+   (when vscode-mode-cond/inSearchEditor)))
  (("ESC"
    (command vscode-mode-command/settings\.action\.clearSearchResults)
    (when-orig . "inSettingsEditor && inSettingsSearch")
@@ -1214,18 +1138,15 @@
  (("C-."
    (command vscode-mode-command/settings\.action\.editFocusedSetting)
    (when-orig . "inSettingsSearch")
-   (when
-    (vscode-mode-cond/inSettingsSearch))))
+   (when vscode-mode-cond/inSettingsSearch)))
  (("RET"
    (command vscode-mode-command/settings\.action\.focusNextSetting)
    (when-orig . "inSettingsSearch")
-   (when
-    (vscode-mode-cond/inSettingsSearch))))
+   (when vscode-mode-cond/inSettingsSearch)))
  (("S-RET"
    (command vscode-mode-command/settings\.action\.focusPreviousSetting)
    (when-orig . "inSettingsSearch")
-   (when
-    (vscode-mode-cond/inSettingsSearch))))
+   (when vscode-mode-cond/inSettingsSearch)))
  (("<down>"
    (command vscode-mode-command/settings\.action\.focusSettingsFile)
    (when-orig . "inSettingsSearch && !suggestWidgetVisible")
@@ -1236,63 +1157,56 @@
  (("C-f"
    (command vscode-mode-command/settings\.action\.search)
    (when-orig . "inSettingsEditor")
-   (when
-    (vscode-mode-cond/inSettingsEditor))))
+   (when vscode-mode-cond/inSettingsEditor)))
  (("C-/"
    (command vscode-mode-command/toggleExplainMode)
    (when-orig . "suggestWidgetVisible")
-   (when
-    (vscode-mode-cond/suggestWidgetVisible))))
+   (when vscode-mode-cond/suggestWidgetVisible)))
  (("C-k f2"
    (command vscode-mode-command/togglePeekWidgetFocus)
    (when-orig . "inReferenceSearchEditor || referenceSearchVisible")
    (when or
-	 ((vscode-mode-cond/inReferenceSearchEditor))
-	 ((vscode-mode-cond/referenceSearchVisible)))))
+	 (vscode-mode-cond/inReferenceSearchEditor)
+	 (vscode-mode-cond/referenceSearchVisible))))
  (("M-f5"
    (command vscode-mode-command/workbench\.action\.editor\.nextChange)
    (when-orig . "editorTextFocus")
-   (when
-    (vscode-mode-cond/editorTextFocus))))
+   (when vscode-mode-cond/editorTextFocus)))
  (("S-M-f5"
    (command vscode-mode-command/workbench\.action\.editor\.previousChange)
    (when-orig . "editorTextFocus")
-   (when
-    (vscode-mode-cond/editorTextFocus))))
+   (when vscode-mode-cond/editorTextFocus)))
  (("S-ESC"
    (command vscode-mode-command/workbench\.action\.hideComment)
    (when-orig . "commentEditorFocused")
-   (when
-    (vscode-mode-cond/commentEditorFocused))))
+   (when vscode-mode-cond/commentEditorFocused)))
  (("ESC"
    (command vscode-mode-command/workbench\.action\.hideComment)
    (when-orig . "commentEditorFocused")
-   (when
-    (vscode-mode-cond/commentEditorFocused))))
+   (when vscode-mode-cond/commentEditorFocused)))
  (("C-RET"
    (command vscode-mode-command/workbench\.action\.submitComment)
    (when-orig . "commentEditorFocused")
-   (when
-    (vscode-mode-cond/commentEditorFocused))))
- (("C-left"
+   (when vscode-mode-cond/commentEditorFocused)))
+ (("C-<left>"
    (command vscode-mode-command/cursorWordAccessibilityLeft)
    (when-orig . "accessibilityModeEnabled && textInputFocus")
    (when and
 	 (vscode-mode-cond/accessibilityModeEnabled)
 	 (vscode-mode-cond/textInputFocus))))
- (("C-S-left"
+ (("C-S-<left>"
    (command vscode-mode-command/cursorWordAccessibilityLeftSelect)
    (when-orig . "accessibilityModeEnabled && textInputFocus")
    (when and
 	 (vscode-mode-cond/accessibilityModeEnabled)
 	 (vscode-mode-cond/textInputFocus))))
- (("C-right"
+ (("C-<right>"
    (command vscode-mode-command/cursorWordAccessibilityRight)
    (when-orig . "accessibilityModeEnabled && textInputFocus")
    (when and
 	 (vscode-mode-cond/accessibilityModeEnabled)
 	 (vscode-mode-cond/textInputFocus))))
- (("C-S-right"
+ (("C-S-<right>"
    (command vscode-mode-command/cursorWordAccessibilityRightSelect)
    (when-orig . "accessibilityModeEnabled && textInputFocus")
    (when and
@@ -1342,28 +1256,23 @@
  (("M-c"
    (command vscode-mode-command/toggleFindCaseSensitive)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("M-l"
    (command vscode-mode-command/toggleFindInSelection)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("M-r"
    (command vscode-mode-command/toggleFindRegex)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("M-w"
    (command vscode-mode-command/toggleFindWholeWord)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("M-p"
    (command vscode-mode-command/togglePreserveCase)
    (when-orig . "editorFocus")
-   (when
-    (vscode-mode-cond/editorFocus))))
+   (when vscode-mode-cond/editorFocus)))
  (("tab"
    (command vscode-mode-command/jumpToNextSnippetPlaceholder)
    (when-orig . "editorTextFocus && hasNextTabstop && inSnippetMode")
@@ -1381,8 +1290,7 @@
  (("ESC"
    (command vscode-mode-command/leaveEditorMessage)
    (when-orig . "messageVisible")
-   (when
-    (vscode-mode-cond/messageVisible))))
+   (when vscode-mode-cond/messageVisible)))
  (("S-ESC"
    (command vscode-mode-command/leaveSnippet)
    (when-orig . "editorTextFocus && inSnippetMode")
@@ -1398,13 +1306,11 @@
  (("S-ESC"
    (command vscode-mode-command/closeDirtyDiff)
    (when-orig . "dirtyDiffVisible")
-   (when
-    (vscode-mode-cond/dirtyDiffVisible))))
+   (when vscode-mode-cond/dirtyDiffVisible)))
  (("ESC"
    (command vscode-mode-command/closeDirtyDiff)
    (when-orig . "dirtyDiffVisible")
-   (when
-    (vscode-mode-cond/dirtyDiffVisible))))
+   (when vscode-mode-cond/dirtyDiffVisible)))
  (("S-ESC"
    (command vscode-mode-command/closeMarkersNavigation)
    (when-orig . "editorFocus && markersNavigationVisible")
@@ -1420,8 +1326,7 @@
  (("ESC"
    (command vscode-mode-command/notifications\.hideToasts)
    (when-orig . "notificationToastsVisible")
-   (when
-    (vscode-mode-cond/notificationToastsVisible))))
+   (when vscode-mode-cond/notificationToastsVisible)))
  (("S-ESC"
    (command vscode-mode-command/closeParameterHints)
    (when-orig . "editorFocus && parameterHintsVisible")
@@ -1659,32 +1564,30 @@
  (("C-S-;"
    (command vscode-mode-command/breadcrumbs\.focus)
    (when-orig . "breadcrumbsPossible")
-   (when
-    (vscode-mode-cond/breadcrumbsPossible))))
+   (when vscode-mode-cond/breadcrumbsPossible)))
  (("C-S-."
    (command vscode-mode-command/breadcrumbs\.focusAndSelect)
    (when-orig . "breadcrumbsPossible")
-   (when
-    (vscode-mode-cond/breadcrumbsPossible))))
- (("C-right"
+   (when vscode-mode-cond/breadcrumbsPossible)))
+ (("C-<right>"
    (command vscode-mode-command/breadcrumbs\.focusNext)
    (when-orig . "breadcrumbsActive && breadcrumbsVisible")
    (when and
 	 (vscode-mode-cond/breadcrumbsActive)
 	 (vscode-mode-cond/breadcrumbsVisible))))
- (("right"
+ (("<right>"
    (command vscode-mode-command/breadcrumbs\.focusNext)
    (when-orig . "breadcrumbsActive && breadcrumbsVisible")
    (when and
 	 (vscode-mode-cond/breadcrumbsActive)
 	 (vscode-mode-cond/breadcrumbsVisible))))
- (("C-left"
+ (("C-<left>"
    (command vscode-mode-command/breadcrumbs\.focusPrevious)
    (when-orig . "breadcrumbsActive && breadcrumbsVisible")
    (when and
 	 (vscode-mode-cond/breadcrumbsActive)
 	 (vscode-mode-cond/breadcrumbsVisible))))
- (("left"
+ (("<left>"
    (command vscode-mode-command/breadcrumbs\.focusPrevious)
    (when-orig . "breadcrumbsActive && breadcrumbsVisible")
    (when and
@@ -1726,9 +1629,8 @@
  (("C-S-."
    (command vscode-mode-command/breadcrumbs\.toggleToOn)
    (when-orig . "!config.breadcrumbs.enabled")
-   (when
-    (not
-     (vscode-mode-cond/config\.breadcrumbs\.enabled)))))
+   (when not
+	 (vscode-mode-cond/config\.breadcrumbs\.enabled))))
  (("S-ESC"
    (command vscode-mode-command/closeAccessibilityHelp)
    (when-orig . "accessibilityHelpWidgetVisible && editorFocus")
@@ -1750,25 +1652,21 @@
  (("S-M-c"
    (command vscode-mode-command/copyFilePath)
    (when-orig . "!editorFocus")
-   (when
-    (not
-     (vscode-mode-cond/editorFocus)))))
+   (when not
+	 (vscode-mode-cond/editorFocus))))
  (("C-k C-S-c"
    (command vscode-mode-command/copyRelativeFilePath)
    (when-orig . "!editorFocus")
-   (when
-    (not
-     (vscode-mode-cond/editorFocus)))))
+   (when not
+	 (vscode-mode-cond/editorFocus))))
  (("M-RET"
    (command vscode-mode-command/debug\.openBreakpointToSide)
    (when-orig . "breakpointsFocused")
-   (when
-    (vscode-mode-cond/breakpointsFocused))))
+   (when vscode-mode-cond/breakpointsFocused)))
  (("C-RET"
    (command vscode-mode-command/debug\.openBreakpointToSide)
    (when-orig . "breakpointsFocused")
-   (when
-    (vscode-mode-cond/breakpointsFocused))))
+   (when vscode-mode-cond/breakpointsFocused)))
  (("delete"
    (command vscode-mode-command/debug\.removeBreakpoint)
    (when-orig . "breakpointsFocused && !breakpointSelected")
@@ -1786,18 +1684,15 @@
  (("M--"
    (command vscode-mode-command/decreaseSearchEditorContextLines)
    (when-orig . "inSearchEditor")
-   (when
-    (vscode-mode-cond/inSearchEditor))))
+   (when vscode-mode-cond/inSearchEditor)))
  (("S-f9"
    (command vscode-mode-command/editor\.debug\.action\.toggleInlineBreakpoint)
    (when-orig . "editorTextFocus")
-   (when
-    (vscode-mode-cond/editorTextFocus))))
+   (when vscode-mode-cond/editorTextFocus)))
  (("S-RET"
    (command vscode-mode-command/editor\.refocusCallHierarchy)
    (when-orig . "callHierarchyVisible")
-   (when
-    (vscode-mode-cond/callHierarchyVisible))))
+   (when vscode-mode-cond/callHierarchyVisible)))
  (("S-M-h"
    (command vscode-mode-command/editor\.showCallHierarchy)
    (when-orig . "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor")
@@ -1866,8 +1761,7 @@
  (("M-="
    (command vscode-mode-command/increaseSearchEditorContextLines)
    (when-orig . "inSearchEditor")
-   (when
-    (vscode-mode-cond/inSearchEditor))))
+   (when vscode-mode-cond/inSearchEditor)))
  (("C-k C-a"
    (command vscode-mode-command/keybindings\.editor\.addKeybinding)
    (when-orig . "inKeybindings && keybindingFocus")
@@ -1919,13 +1813,11 @@
  (("C-f"
    (command vscode-mode-command/keybindings\.editor\.searchKeybindings)
    (when-orig . "inKeybindings")
-   (when
-    (vscode-mode-cond/inKeybindings))))
+   (when vscode-mode-cond/inKeybindings)))
  (("M-p"
    (command vscode-mode-command/keybindings\.editor\.toggleSortByPrecedence)
    (when-orig . "inKeybindings")
-   (when
-    (vscode-mode-cond/inKeybindings))))
+   (when vscode-mode-cond/inKeybindings)))
  (("ESC"
    (command vscode-mode-command/list\.clear)
    (when-orig . "listFocus && listHasSelectionOrFocus && !inputFocus")
@@ -1934,21 +1826,21 @@
 	 (vscode-mode-cond/listHasSelectionOrFocus)
 	 (not
 	  (vscode-mode-cond/inputFocus)))))
- (("left"
+ (("<left>"
    (command vscode-mode-command/list\.collapse)
    (when-orig . "listFocus && !inputFocus")
    (when and
 	 (vscode-mode-cond/listFocus)
 	 (not
 	  (vscode-mode-cond/inputFocus)))))
- (("C-left"
+ (("C-<left>"
    (command vscode-mode-command/list\.collapseAll)
    (when-orig . "listFocus && !inputFocus")
    (when and
 	 (vscode-mode-cond/listFocus)
 	 (not
 	  (vscode-mode-cond/inputFocus)))))
- (("right"
+ (("<right>"
    (command vscode-mode-command/list\.expand)
    (when-orig . "listFocus && !inputFocus")
    (when and
@@ -2158,8 +2050,7 @@
  (("C-<up>"
    (command vscode-mode-command/notebook\.cell\.focusOutOutput)
    (when-orig . "notebookEditorFocused")
-   (when
-    (vscode-mode-cond/notebookEditorFocused))))
+   (when vscode-mode-cond/notebookEditorFocused)))
  (("C-S-RET"
    (command vscode-mode-command/notebook\.cell\.insertCodeCellAbove)
    (when-orig . "notebookCellListFocused && !inputFocus")
@@ -2177,13 +2068,11 @@
  (("S-M-win-j"
    (command vscode-mode-command/notebook\.cell\.joinAbove)
    (when-orig . "notebookEditorFocused")
-   (when
-    (vscode-mode-cond/notebookEditorFocused))))
+   (when vscode-mode-cond/notebookEditorFocused)))
  (("M-win-j"
    (command vscode-mode-command/notebook\.cell\.joinBelow)
    (when-orig . "notebookEditorFocused")
-   (when
-    (vscode-mode-cond/notebookEditorFocused))))
+   (when vscode-mode-cond/notebookEditorFocused)))
  (("M-<down>"
    (command vscode-mode-command/notebook\.cell\.moveDown)
    (when-orig . "notebookEditorFocused && !inputFocus")
@@ -2211,13 +2100,11 @@
  (("C-l"
    (command vscode-mode-command/notebook\.centerActiveCell)
    (when-orig . "notebookEditorFocused")
-   (when
-    (vscode-mode-cond/notebookEditorFocused))))
+   (when vscode-mode-cond/notebookEditorFocused)))
  (("C-f"
    (command vscode-mode-command/notebook\.find)
    (when-orig . "notebookEditorFocused")
-   (when
-    (vscode-mode-cond/notebookEditorFocused))))
+   (when vscode-mode-cond/notebookEditorFocused)))
  (("C-end"
    (command vscode-mode-command/notebook\.focusBottom)
    (when-orig . "notebookEditorFocused && !inputFocus")
@@ -2238,7 +2125,7 @@
 	 (vscode-mode-cond/notebookEditorFocused)
 	 (not
 	  (vscode-mode-cond/inputFocus)))))
- (("left"
+ (("<left>"
    (command vscode-mode-command/notebook\.fold)
    (when-orig . "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'")
    (when and
@@ -2274,7 +2161,7 @@
    (when and
 	 (vscode-mode-cond/notebookEditorFocused)
 	 (vscode-mode-cond/notebookFindWidgetFocused))))
- (("right"
+ (("<right>"
    (command vscode-mode-command/notebook\.unfold)
    (when-orig . "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'")
    (when and
@@ -2297,28 +2184,23 @@
  (("delete"
    (command vscode-mode-command/notification\.clear)
    (when-orig . "notificationFocus")
-   (when
-    (vscode-mode-cond/notificationFocus))))
- (("left"
+   (when vscode-mode-cond/notificationFocus)))
+ (("<left>"
    (command vscode-mode-command/notification\.collapse)
    (when-orig . "notificationFocus")
-   (when
-    (vscode-mode-cond/notificationFocus))))
- (("right"
+   (when vscode-mode-cond/notificationFocus)))
+ (("<right>"
    (command vscode-mode-command/notification\.expand)
    (when-orig . "notificationFocus")
-   (when
-    (vscode-mode-cond/notificationFocus))))
+   (when vscode-mode-cond/notificationFocus)))
  (("RET"
    (command vscode-mode-command/notification\.toggle)
    (when-orig . "notificationFocus")
-   (when
-    (vscode-mode-cond/notificationFocus))))
+   (when vscode-mode-cond/notificationFocus)))
  (("SPC"
    (command vscode-mode-command/notification\.toggle)
    (when-orig . "notificationFocus")
-   (when
-    (vscode-mode-cond/notificationFocus))))
+   (when vscode-mode-cond/notificationFocus)))
  (("home"
    (command vscode-mode-command/notifications\.focusFirstToast)
    (when-orig . "notificationFocus && notificationToastsVisible")
@@ -2358,35 +2240,29 @@
  (("C-c"
    (command vscode-mode-command/problems\.action\.copy)
    (when-orig . "problemFocus")
-   (when
-    (vscode-mode-cond/problemFocus))))
+   (when vscode-mode-cond/problemFocus)))
  (("C-f"
    (command vscode-mode-command/problems\.action\.focusFilter)
    (when-orig . "focusedView == 'workbench.panel.markers.view'")
-   (when
-    (equal
-     (vscode-mode-cond/focusedView)
-     "workbench.panel.markers.view"))))
+   (when equal
+	 (vscode-mode-cond/focusedView)
+	 "workbench.panel.markers.view")))
  (("C-<down>"
    (command vscode-mode-command/problems\.action\.focusProblemsFromFilter)
    (when-orig . "problemsFilterFocus")
-   (when
-    (vscode-mode-cond/problemsFilterFocus))))
+   (when vscode-mode-cond/problemsFilterFocus)))
  (("RET"
    (command vscode-mode-command/problems\.action\.open)
    (when-orig . "problemFocus")
-   (when
-    (vscode-mode-cond/problemFocus))))
+   (when vscode-mode-cond/problemFocus)))
  (("C-RET"
    (command vscode-mode-command/problems\.action\.openToSide)
    (when-orig . "problemFocus")
-   (when
-    (vscode-mode-cond/problemFocus))))
+   (when vscode-mode-cond/problemFocus)))
  (("C-."
    (command vscode-mode-command/problems\.action\.showQuickFixes)
    (when-orig . "problemFocus")
-   (when
-    (vscode-mode-cond/problemFocus))))
+   (when vscode-mode-cond/problemFocus)))
  (("SPC"
    (command vscode-mode-command/refactorPreview\.toggleCheckedState)
    (when-orig . "listFocus && refactorPreview.enabled && !inputFocus")
@@ -2398,9 +2274,8 @@
  (("S-M-r"
    (command vscode-mode-command/revealFileInOS)
    (when-orig . "!editorFocus")
-   (when
-    (not
-     (vscode-mode-cond/editorFocus)))))
+   (when not
+	 (vscode-mode-cond/editorFocus))))
  (("RET"
    (command vscode-mode-command/revealReference)
    (when-orig . "listFocus && referenceSearchVisible && !inputFocus")
@@ -2412,18 +2287,15 @@
  (("C-RET"
    (command vscode-mode-command/scm\.acceptInput)
    (when-orig . "scmRepository")
-   (when
-    (vscode-mode-cond/scmRepository))))
+   (when vscode-mode-cond/scmRepository)))
  (("M-<down>"
    (command vscode-mode-command/scm\.forceViewNextCommit)
    (when-orig . "scmRepository")
-   (when
-    (vscode-mode-cond/scmRepository))))
+   (when vscode-mode-cond/scmRepository)))
  (("M-<up>"
    (command vscode-mode-command/scm\.forceViewPreviousCommit)
    (when-orig . "scmRepository")
-   (when
-    (vscode-mode-cond/scmRepository))))
+   (when vscode-mode-cond/scmRepository)))
  (("<down>"
    (command vscode-mode-command/scm\.viewNextCommit)
    (when-orig . "scmInputIsInLastPosition && scmRepository && !suggestWidgetVisible")
@@ -2451,25 +2323,23 @@
  (("C-c"
    (command vscode-mode-command/search\.action\.copyMatch)
    (when-orig . "fileMatchOrMatchFocus")
-   (when
-    (vscode-mode-cond/fileMatchOrMatchFocus))))
+   (when vscode-mode-cond/fileMatchOrMatchFocus)))
  (("S-M-c"
    (command vscode-mode-command/search\.action\.copyPath)
    (when-orig . "fileMatchOrFolderMatchWithResourceFocus")
-   (when
-    (vscode-mode-cond/fileMatchOrFolderMatchWithResourceFocus))))
+   (when vscode-mode-cond/fileMatchOrFolderMatchWithResourceFocus)))
  (("f4"
    (command vscode-mode-command/search\.action\.focusNextSearchResult)
    (when-orig . "hasSearchResult || inSearchEditor")
    (when or
-	 ((vscode-mode-cond/hasSearchResult))
-	 ((vscode-mode-cond/inSearchEditor)))))
+	 (vscode-mode-cond/hasSearchResult)
+	 (vscode-mode-cond/inSearchEditor))))
  (("S-f4"
    (command vscode-mode-command/search\.action\.focusPreviousSearchResult)
    (when-orig . "hasSearchResult || inSearchEditor")
    (when or
-	 ((vscode-mode-cond/hasSearchResult))
-	 ((vscode-mode-cond/inSearchEditor)))))
+	 (vscode-mode-cond/hasSearchResult)
+	 (vscode-mode-cond/inSearchEditor))))
  (("C-<up>"
    (command vscode-mode-command/search\.action\.focusSearchFromResults)
    (when-orig . "firstMatchFocus && searchViewletVisible")
@@ -2568,8 +2438,7 @@
  (("C-S-l"
    (command vscode-mode-command/selectAllSearchEditorMatches)
    (when-orig . "inSearchEditor")
-   (when
-    (vscode-mode-cond/inSearchEditor))))
+   (when vscode-mode-cond/inSearchEditor)))
  (("ESC"
    (command vscode-mode-command/settings\.action\.focusLevelUp)
    (when-orig . "inSettingsEditor && !inSettingsSearch")
@@ -2580,8 +2449,7 @@
  (("RET"
    (command vscode-mode-command/settings\.action\.focusSettingControl)
    (when-orig . "settingRowFocus")
-   (when
-    (vscode-mode-cond/settingRowFocus))))
+   (when vscode-mode-cond/settingRowFocus)))
  (("<down>"
    (command vscode-mode-command/settings\.action\.focusSettingsFromSearch)
    (when-orig . "inSettingsSearch && !suggestWidgetVisible")
@@ -2595,7 +2463,7 @@
    (when and
 	 (vscode-mode-cond/inSettingsEditor)
 	 (vscode-mode-cond/settingsTocRowFocus))))
- (("left"
+ (("<left>"
    (command vscode-mode-command/settings\.action\.focusTOC)
    (when-orig . "inSettingsEditor && settingRowFocus")
    (when and
@@ -2604,13 +2472,11 @@
  (("S-f9"
    (command vscode-mode-command/settings\.action\.showContextMenu)
    (when-orig . "inSettingsEditor")
-   (when
-    (vscode-mode-cond/inSettingsEditor))))
+   (when vscode-mode-cond/inSettingsEditor)))
  (("M-c"
    (command vscode-mode-command/toggleSearchCaseSensitive)
    (when-orig . "searchViewletFocus")
-   (when
-    (vscode-mode-cond/searchViewletFocus))))
+   (when vscode-mode-cond/searchViewletFocus)))
  (("M-c"
    (command vscode-mode-command/toggleSearchEditorCaseSensitive)
    (when-orig . "inSearchEditor && searchInputBoxFocus")
@@ -2620,8 +2486,7 @@
  (("M-l"
    (command vscode-mode-command/toggleSearchEditorContextLines)
    (when-orig . "inSearchEditor")
-   (when
-    (vscode-mode-cond/inSearchEditor))))
+   (when vscode-mode-cond/inSearchEditor)))
  (("M-r"
    (command vscode-mode-command/toggleSearchEditorRegex)
    (when-orig . "inSearchEditor && searchInputBoxFocus")
@@ -2637,18 +2502,15 @@
  (("M-p"
    (command vscode-mode-command/toggleSearchPreserveCase)
    (when-orig . "searchViewletFocus")
-   (when
-    (vscode-mode-cond/searchViewletFocus))))
+   (when vscode-mode-cond/searchViewletFocus)))
  (("M-r"
    (command vscode-mode-command/toggleSearchRegex)
    (when-orig . "searchViewletFocus")
-   (when
-    (vscode-mode-cond/searchViewletFocus))))
+   (when vscode-mode-cond/searchViewletFocus)))
  (("M-w"
    (command vscode-mode-command/toggleSearchWholeWord)
    (when-orig . "searchViewletFocus")
-   (when
-    (vscode-mode-cond/searchViewletFocus))))
+   (when vscode-mode-cond/searchViewletFocus)))
  (("C-w"
    (command vscode-mode-command/workbench\.action\.closeActiveEditor)
    (when-orig)
@@ -2672,8 +2534,7 @@
  (("C-k f"
    (command vscode-mode-command/workbench\.action\.closeFolder)
    (when-orig . "emptyWorkspaceSupport")
-   (when
-    (vscode-mode-cond/emptyWorkspaceSupport))))
+   (when vscode-mode-cond/emptyWorkspaceSupport)))
  (("C-w"
    (command vscode-mode-command/workbench\.action\.closeGroup)
    (when-orig . "activeEditorGroupEmpty && multipleEditorGroups")
@@ -2689,13 +2550,11 @@
  (("S-ESC"
    (command vscode-mode-command/workbench\.action\.closeQuickOpen)
    (when-orig . "inQuickOpen")
-   (when
-    (vscode-mode-cond/inQuickOpen))))
+   (when vscode-mode-cond/inQuickOpen)))
  (("ESC"
    (command vscode-mode-command/workbench\.action\.closeQuickOpen)
    (when-orig . "inQuickOpen")
-   (when
-    (vscode-mode-cond/inQuickOpen))))
+   (when vscode-mode-cond/inQuickOpen)))
  (("C-k u"
    (command vscode-mode-command/workbench\.action\.closeUnmodifiedEditors)
    (when-orig)
@@ -2715,28 +2574,23 @@
  (("M-f5"
    (command vscode-mode-command/workbench\.action\.compareEditor\.nextChange)
    (when-orig . "textCompareEditorVisible")
-   (when
-    (vscode-mode-cond/textCompareEditorVisible))))
+   (when vscode-mode-cond/textCompareEditorVisible)))
  (("S-M-f5"
    (command vscode-mode-command/workbench\.action\.compareEditor\.previousChange)
    (when-orig . "textCompareEditorVisible")
-   (when
-    (vscode-mode-cond/textCompareEditorVisible))))
+   (when vscode-mode-cond/textCompareEditorVisible)))
  (("f5"
    (command vscode-mode-command/workbench\.action\.debug\.continue)
    (when-orig . "inDebugMode")
-   (when
-    (vscode-mode-cond/inDebugMode))))
+   (when vscode-mode-cond/inDebugMode)))
  (("C-S-f5"
    (command vscode-mode-command/workbench\.action\.debug\.restart)
    (when-orig . "inDebugMode")
-   (when
-    (vscode-mode-cond/inDebugMode))))
+   (when vscode-mode-cond/inDebugMode)))
  (("C-f5"
    (command vscode-mode-command/workbench\.action\.debug\.run)
    (when-orig . "debuggersAvailable")
-   (when
-    (vscode-mode-cond/debuggersAvailable))))
+   (when vscode-mode-cond/debuggersAvailable)))
  (("f5"
    (command vscode-mode-command/workbench\.action\.debug\.start)
    (when-orig . "debuggersAvailable && !inDebugMode")
@@ -2747,22 +2601,19 @@
  (("S-f11"
    (command vscode-mode-command/workbench\.action\.debug\.stepOut)
    (when-orig . "debugState == 'stopped'")
-   (when
-    (equal
-     (vscode-mode-cond/debugState)
-     "stopped"))))
+   (when equal
+	 (vscode-mode-cond/debugState)
+	 "stopped")))
  (("f10"
    (command vscode-mode-command/workbench\.action\.debug\.stepOver)
    (when-orig . "debugState == 'stopped'")
-   (when
-    (equal
-     (vscode-mode-cond/debugState)
-     "stopped"))))
+   (when equal
+	 (vscode-mode-cond/debugState)
+	 "stopped")))
  (("S-f5"
    (command vscode-mode-command/workbench\.action\.debug\.stop)
    (when-orig . "inDebugMode")
-   (when
-    (vscode-mode-cond/inDebugMode))))
+   (when vscode-mode-cond/inDebugMode)))
  (("C-k m"
    (command vscode-mode-command/workbench\.action\.editor\.changeLanguageMode)
    (when-orig)
@@ -2786,13 +2637,11 @@
  (("C-o"
    (command vscode-mode-command/workbench\.action\.files\.openLocalFile)
    (when-orig . "remoteFileDialogVisible")
-   (when
-    (vscode-mode-cond/remoteFileDialogVisible))))
+   (when vscode-mode-cond/remoteFileDialogVisible)))
  (("C-k C-o"
    (command vscode-mode-command/workbench\.action\.files\.openLocalFolder)
    (when-orig . "remoteFileDialogVisible")
-   (when
-    (vscode-mode-cond/remoteFileDialogVisible))))
+   (when vscode-mode-cond/remoteFileDialogVisible)))
  (("C-k r"
    (command vscode-mode-command/workbench\.action\.files\.revealActiveFileInWindows)
    (when-orig)
@@ -2812,8 +2661,7 @@
  (("C-S-s"
    (command vscode-mode-command/workbench\.action\.files\.saveLocalFile)
    (when-orig . "remoteFileDialogVisible")
-   (when
-    (vscode-mode-cond/remoteFileDialogVisible))))
+   (when vscode-mode-cond/remoteFileDialogVisible)))
  (("C-k C-S-s"
    (command vscode-mode-command/workbench\.action\.files\.saveWithoutFormatting)
    (when-orig)
@@ -2821,8 +2669,7 @@
  (("C-k o"
    (command vscode-mode-command/workbench\.action\.files\.showOpenedFileInNewWindow)
    (when-orig . "emptyWorkspaceSupport")
-   (when
-    (vscode-mode-cond/emptyWorkspaceSupport))))
+   (when vscode-mode-cond/emptyWorkspaceSupport)))
  (("C-S-f"
    (command vscode-mode-command/workbench\.action\.findInFiles)
    (when-orig)
@@ -2851,7 +2698,7 @@
    (command vscode-mode-command/workbench\.action\.focusFourthEditorGroup)
    (when-orig)
    (when)))
- (("C-k C-left"
+ (("C-k C-<left>"
    (command vscode-mode-command/workbench\.action\.focusLeftGroup)
    (when-orig)
    (when)))
@@ -2863,7 +2710,7 @@
    (command vscode-mode-command/workbench\.action\.focusPreviousPart)
    (when-orig)
    (when)))
- (("C-k C-right"
+ (("C-k C-<right>"
    (command vscode-mode-command/workbench\.action\.focusRightGroup)
    (when-orig)
    (when)))
@@ -2898,8 +2745,7 @@
  (("ESC"
    (command vscode-mode-command/workbench\.action\.hideInterfaceOverview)
    (when-orig . "interfaceOverviewVisible")
-   (when
-    (vscode-mode-cond/interfaceOverviewVisible))))
+   (when vscode-mode-cond/interfaceOverviewVisible)))
  (("<down>"
    (command vscode-mode-command/workbench\.action\.interactivePlayground\.arrowDown)
    (when-orig . "interactivePlaygroundFocus && !editorTextFocus")
@@ -2948,11 +2794,11 @@
    (command vscode-mode-command/workbench\.action\.moveActiveEditorGroupDown)
    (when-orig)
    (when)))
- (("C-k left"
+ (("C-k <left>"
    (command vscode-mode-command/workbench\.action\.moveActiveEditorGroupLeft)
    (when-orig)
    (when)))
- (("C-k right"
+ (("C-k <right>"
    (command vscode-mode-command/workbench\.action\.moveActiveEditorGroupRight)
    (when-orig)
    (when)))
@@ -2976,19 +2822,19 @@
    (command vscode-mode-command/workbench\.action\.moveEditorToLastGroup)
    (when-orig)
    (when)))
- (("C-M-right"
+ (("C-M-<right>"
    (command vscode-mode-command/workbench\.action\.moveEditorToNextGroup)
    (when-orig)
    (when)))
- (("C-M-left"
+ (("C-M-<left>"
    (command vscode-mode-command/workbench\.action\.moveEditorToPreviousGroup)
    (when-orig)
    (when)))
- (("M-left"
+ (("M-<left>"
    (command vscode-mode-command/workbench\.action\.navigateBack)
    (when-orig)
    (when)))
- (("M-right"
+ (("M-<right>"
    (command vscode-mode-command/workbench\.action\.navigateForward)
    (when-orig)
    (when)))
@@ -3063,9 +2909,8 @@
  (("C-k S-RET"
    (command vscode-mode-command/workbench\.action\.pinEditor)
    (when-orig . "!activeEditorIsPinned")
-   (when
-    (not
-     (vscode-mode-cond/activeEditorIsPinned)))))
+   (when not
+	 (vscode-mode-cond/activeEditorIsPinned))))
  (("C-"
    (command vscode-mode-command/workbench\.action\.previousEditor)
    (when-orig)
@@ -3106,8 +2951,8 @@
    (command vscode-mode-command/workbench\.action\.search\.toggleQueryDetails)
    (when-orig . "inSearchEditor || searchViewletFocus")
    (when or
-	 ((vscode-mode-cond/inSearchEditor))
-	 ((vscode-mode-cond/searchViewletFocus)))))
+	 (vscode-mode-cond/inSearchEditor)
+	 (vscode-mode-cond/searchViewletFocus))))
  (("C-k C-t"
    (command vscode-mode-command/workbench\.action\.selectTheme)
    (when-orig)
@@ -3211,7 +3056,7 @@
    (when and
 	 (vscode-mode-cond/terminalFocus)
 	 (vscode-mode-cond/terminalProcessSupported))))
- (("M-right"
+ (("M-<right>"
    (command vscode-mode-command/workbench\.action\.terminal\.focusNextPane)
    (when-orig . "terminalFocus && terminalProcessSupported")
    (when and
@@ -3223,7 +3068,7 @@
    (when and
 	 (vscode-mode-cond/terminalFocus)
 	 (vscode-mode-cond/terminalProcessSupported))))
- (("M-left"
+ (("M-<left>"
    (command vscode-mode-command/workbench\.action\.terminal\.focusPreviousPane)
    (when-orig . "terminalFocus && terminalProcessSupported")
    (when and
@@ -3281,9 +3126,8 @@
  (("C-S-c"
    (command vscode-mode-command/workbench\.action\.terminal\.openNativeConsole)
    (when-orig . "!terminalFocus")
-   (when
-    (not
-     (vscode-mode-cond/terminalFocus)))))
+   (when not
+	 (vscode-mode-cond/terminalFocus))))
  (("C-S-v"
    (command vscode-mode-command/workbench\.action\.terminal\.paste)
    (when-orig . "terminalFocus && terminalProcessSupported")
@@ -3353,8 +3197,7 @@
  (("C-DEL"
    (command vscode-mode-command/workbench\.action\.terminal\.sendSequence)
    (when-orig . "terminalFocus")
-   (when
-    (vscode-mode-cond/terminalFocus))))
+   (when vscode-mode-cond/terminalFocus)))
  (("C-DEL"
    (command vscode-mode-command/workbench\.action\.terminal\.sendSequence)
    (when-orig . "terminalFocus && terminalShellType == 'cmd'")
@@ -3366,8 +3209,7 @@
  (("C-delete"
    (command vscode-mode-command/workbench\.action\.terminal\.sendSequence)
    (when-orig . "terminalFocus")
-   (when
-    (vscode-mode-cond/terminalFocus))))
+   (when vscode-mode-cond/terminalFocus)))
  (("C-S-5"
    (command vscode-mode-command/workbench\.action\.terminal\.split)
    (when-orig . "terminalFocus && terminalProcessSupported")
@@ -3431,8 +3273,7 @@
  (("C-k S-RET"
    (command vscode-mode-command/workbench\.action\.unpinEditor)
    (when-orig . "activeEditorIsPinned")
-   (when
-    (vscode-mode-cond/activeEditorIsPinned))))
+   (when vscode-mode-cond/activeEditorIsPinned)))
  (("C-numpad_add"
    (command vscode-mode-command/workbench\.action\.zoomIn)
    (when-orig)
@@ -3468,8 +3309,7 @@
  (("C-S-y"
    (command vscode-mode-command/workbench\.debug\.action\.toggleRepl)
    (when-orig . "debuggersAvailable")
-   (when
-    (vscode-mode-cond/debuggersAvailable))))
+   (when vscode-mode-cond/debuggersAvailable)))
  (("C-k C-m"
    (command vscode-mode-command/workbench\.extensions\.action\.showRecommendedKeymapExtensions)
    (when-orig)
@@ -3485,43 +3325,35 @@
  (("C-k e"
    (command vscode-mode-command/workbench\.files\.action\.focusOpenEditorsView)
    (when-orig . "workbench.explorer.openEditorsView.active")
-   (when
-    (vscode-mode-cond/workbench\.explorer\.openEditorsView\.active))))
+   (when vscode-mode-cond/workbench\.explorer\.openEditorsView\.active)))
  (("ESC"
    (command vscode-mode-command/workbench\.statusBar\.clearFocus)
    (when-orig . "statusBarFocused")
-   (when
-    (vscode-mode-cond/statusBarFocused))))
+   (when vscode-mode-cond/statusBarFocused)))
  (("home"
    (command vscode-mode-command/workbench\.statusBar\.focusFirst)
    (when-orig . "statusBarFocused")
-   (when
-    (vscode-mode-cond/statusBarFocused))))
+   (when vscode-mode-cond/statusBarFocused)))
  (("end"
    (command vscode-mode-command/workbench\.statusBar\.focusLast)
    (when-orig . "statusBarFocused")
-   (when
-    (vscode-mode-cond/statusBarFocused))))
+   (when vscode-mode-cond/statusBarFocused)))
  (("<down>"
    (command vscode-mode-command/workbench\.statusBar\.focusNext)
    (when-orig . "statusBarFocused")
-   (when
-    (vscode-mode-cond/statusBarFocused))))
- (("right"
+   (when vscode-mode-cond/statusBarFocused)))
+ (("<right>"
    (command vscode-mode-command/workbench\.statusBar\.focusNext)
    (when-orig . "statusBarFocused")
-   (when
-    (vscode-mode-cond/statusBarFocused))))
+   (when vscode-mode-cond/statusBarFocused)))
  (("<up>"
    (command vscode-mode-command/workbench\.statusBar\.focusPrevious)
    (when-orig . "statusBarFocused")
-   (when
-    (vscode-mode-cond/statusBarFocused))))
- (("left"
+   (when vscode-mode-cond/statusBarFocused)))
+ (("<left>"
    (command vscode-mode-command/workbench\.statusBar\.focusPrevious)
    (when-orig . "statusBarFocused")
-   (when
-    (vscode-mode-cond/statusBarFocused))))
+   (when vscode-mode-cond/statusBarFocused)))
  (("C-S-d"
    (command vscode-mode-command/workbench\.view\.debug)
    (when-orig)
@@ -3541,10 +3373,9 @@
  (("C-S-f"
    (command vscode-mode-command/workbench\.view\.search)
    (when-orig . "!searchViewletVisible")
-   (when
-    (not
-     (vscode-mode-cond/searchViewletVisible)))))
- (("C-right"
+   (when not
+	 (vscode-mode-cond/searchViewletVisible))))
+ (("C-<right>"
    (command vscode-mode-command/breadcrumbs\.focusNextWithPicker)
    (when-orig . "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus")
    (when and
@@ -3553,7 +3384,7 @@
 	 (vscode-mode-cond/listFocus)
 	 (not
 	  (vscode-mode-cond/inputFocus)))))
- (("C-left"
+ (("C-<left>"
    (command vscode-mode-command/breadcrumbs\.focusPreviousWithPicker)
    (when-orig . "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus")
    (when and
@@ -3571,52 +3402,45 @@
  (("C-k <down>"
    (command vscode-mode-command/views\.moveViewDown)
    (when-orig . "focusedView != ''")
-   (when
-    (not
-     (equal
-      (vscode-mode-cond/focusedView)
-      "")))))
- (("C-k left"
+   (when not
+	 (equal
+	  (vscode-mode-cond/focusedView)
+	  ""))))
+ (("C-k <left>"
    (command vscode-mode-command/views\.moveViewLeft)
    (when-orig . "focusedView != ''")
-   (when
-    (not
-     (equal
-      (vscode-mode-cond/focusedView)
-      "")))))
- (("C-k right"
+   (when not
+	 (equal
+	  (vscode-mode-cond/focusedView)
+	  ""))))
+ (("C-k <right>"
    (command vscode-mode-command/views\.moveViewRight)
    (when-orig . "focusedView != ''")
-   (when
-    (not
-     (equal
-      (vscode-mode-cond/focusedView)
-      "")))))
+   (when not
+	 (equal
+	  (vscode-mode-cond/focusedView)
+	  ""))))
  (("C-k <up>"
    (command vscode-mode-command/views\.moveViewUp)
    (when-orig . "focusedView != ''")
-   (when
-    (not
-     (equal
-      (vscode-mode-cond/focusedView)
-      "")))))
+   (when not
+	 (equal
+	  (vscode-mode-cond/focusedView)
+	  ""))))
  (("f6"
    (command vscode-mode-command/workbench\.action\.debug\.pause)
    (when-orig . "debugState == 'running'")
-   (when
-    (equal
-     (vscode-mode-cond/debugState)
-     "running"))))
+   (when equal
+	 (vscode-mode-cond/debugState)
+	 "running")))
  (("f2"
    (command vscode-mode-command/debug\.renameWatchExpression)
    (when-orig . "watchExpressionsFocused")
-   (when
-    (vscode-mode-cond/watchExpressionsFocused))))
+   (when vscode-mode-cond/watchExpressionsFocused)))
  (("f2"
    (command vscode-mode-command/debug\.setVariable)
    (when-orig . "variablesFocused")
-   (when
-    (vscode-mode-cond/variablesFocused))))
+   (when vscode-mode-cond/variablesFocused)))
  (("SPC"
    (command vscode-mode-command/debug\.toggleBreakpoint)
    (when-orig . "breakpointsFocused && !inputFocus")
@@ -3745,7 +3569,7 @@
 	  (vscode-mode-cond/explorerResourceReadonly))
 	 (not
 	  (vscode-mode-cond/inputFocus)))))
- (("right"
+ (("<right>"
    (command vscode-mode-command/nextCompressedFolder)
    (when-orig . "explorerViewletCompressedFocus && explorerViewletVisible && filesExplorerFocus && !explorerViewletCompressedLastFocus && !inputFocus")
    (when and
@@ -3756,7 +3580,7 @@
 	  (vscode-mode-cond/explorerViewletCompressedLastFocus))
 	 (not
 	  (vscode-mode-cond/inputFocus)))))
- (("left"
+ (("<left>"
    (command vscode-mode-command/previousCompressedFolder)
    (when-orig . "explorerViewletCompressedFocus && explorerViewletVisible && filesExplorerFocus && !explorerViewletCompressedFirstFocus && !inputFocus")
    (when and
@@ -3810,11 +3634,10 @@
  (("f11"
    (command vscode-mode-command/workbench\.action\.debug\.stepInto)
    (when-orig . "debugState != 'inactive'")
-   (when
-    (not
-     (equal
-      (vscode-mode-cond/debugState)
-      "inactive")))))
+   (when not
+	 (equal
+	  (vscode-mode-cond/debugState)
+	  "inactive"))))
  (("S-ESC"
    (command vscode-mode-command/closeReferenceSearch)
    (when-orig . "referenceSearchVisible && !config.editor.stablePeek")
@@ -3832,13 +3655,11 @@
  (("ESC"
    (command vscode-mode-command/notifications\.hideList)
    (when-orig . "notificationCenterVisible")
-   (when
-    (vscode-mode-cond/notificationCenterVisible))))
- (("M-left"
+   (when vscode-mode-cond/notificationCenterVisible)))
+ (("M-<left>"
    (command vscode-mode-command/workbench\.action\.quickInputBack)
    (when-orig . "inQuickOpen")
-   (when
-    (vscode-mode-cond/inQuickOpen))))
+   (when vscode-mode-cond/inQuickOpen)))
  (("C-tab"
    (command vscode-mode-command/workbench\.action\.quickOpenNavigateNextInEditorPicker)
    (when-orig . "inEditorsPicker && inQuickOpen")
@@ -3902,13 +3723,11 @@
  (("C-r"
    (command vscode-mode-command/workbench\.action\.reloadWindow)
    (when-orig . "isDevelopment")
-   (when
-    (vscode-mode-cond/isDevelopment))))
+   (when vscode-mode-cond/isDevelopment)))
  (("C-S-i"
    (command vscode-mode-command/workbench\.action\.toggleDevTools)
    (when-orig . "isDevelopment")
-   (when
-    (vscode-mode-cond/isDevelopment))))
+   (when vscode-mode-cond/isDevelopment)))
  (("ESC"
    (command vscode-mode-command/notifications\.hideToasts)
    (when-orig . "notificationFocus && notificationToastsVisible")
@@ -3927,8 +3746,7 @@
  (("C-k C-M-s"
    (command vscode-mode-command/git\.stageSelectedRanges)
    (when-orig . "isInDiffEditor")
-   (when
-    (vscode-mode-cond/isInDiffEditor))))
+   (when vscode-mode-cond/isInDiffEditor)))
  (("C-S-v"
    (command vscode-mode-command/markdown\.showPreview)
    (when-orig . "!notebookEditorFocused && editorLangId == 'markdown'")
@@ -3941,13 +3759,11 @@
  (("S-M-f12"
    (command vscode-mode-command/references-view\.findReferences)
    (when-orig . "editorHasReferenceProvider")
-   (when
-    (vscode-mode-cond/editorHasReferenceProvider))))
+   (when vscode-mode-cond/editorHasReferenceProvider)))
  (("C-k C-n"
    (command vscode-mode-command/git\.unstageSelectedRanges)
    (when-orig . "isInDiffEditor")
-   (when
-    (vscode-mode-cond/isInDiffEditor))))
+   (when vscode-mode-cond/isInDiffEditor)))
  (("C-k v"
    (command vscode-mode-command/markdown\.showPreviewToSide)
    (when-orig . "!notebookEditorFocused && editorLangId == 'markdown'")
@@ -3966,8 +3782,7 @@
  (("C-k C-r"
    (command vscode-mode-command/git\.revertSelectedRanges)
    (when-orig . "isInDiffEditor")
-   (when
-    (vscode-mode-cond/isInDiffEditor))))
+   (when vscode-mode-cond/isInDiffEditor)))
  (("S-f4"
    (command vscode-mode-command/references-view\.prev)
    (when-orig . "reference-list.hasResult && references-view.canNavigate")
@@ -3977,5 +3792,4 @@
  (("S-M-h"
    (command vscode-mode-command/references-view\.showCallHierarchy)
    (when-orig . "editorHasCallHierarchyProvider")
-   (when
-    (vscode-mode-cond/editorHasCallHierarchyProvider)))))
+   (when vscode-mode-cond/editorHasCallHierarchyProvider))))

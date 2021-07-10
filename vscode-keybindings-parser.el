@@ -60,6 +60,8 @@
    ;; ("tab" . "TAB")
    ("up" . "<up>")
    ("down" . "<down>")
+   ("left" . "<left>")
+   ("right" . "<right>")
    ))
 
 (defun vscode-mode-reverse-key-sequence (item)
@@ -127,7 +129,7 @@
  ""
  (if conjuncts
   (let ((result (mapcar #'vscode-mode-parse-vscode-style-when-expr (kmax-split-string conjuncts " \&\& "))))
-   (if (= (length result) 1) result (cons 'and result)))))
+   (if (= (length result) 1) (car result) (cons 'and result)))))
 
 (setq do-see nil)
 ;; (setq do-see t)

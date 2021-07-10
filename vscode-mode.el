@@ -1,3 +1,9 @@
+(defgroup vscode nil
+  "VSCode for Emacs."
+  :prefix "vscode-mode-"
+  :group 'emulations
+  :link '(url-link :tag "Github" "https://github.com/planlogic/vscode-mode"))
+
 (global-set-key "\C-cv" 'global-vscode-mode)
 
 (defun vscode-minor-mode-on ()
@@ -42,4 +48,3 @@
 (add-to-list 'load-path vscode-mode-dir)
 (require 'vscode-keybindings-parser)
 (provide 'vscode-mode)
-
