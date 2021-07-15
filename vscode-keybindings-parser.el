@@ -58,6 +58,8 @@
   (vscode-minor-mode-parse-key-sequences-json-file vscode-mode-reverse-keybindings-json-file))
  (see (mapcar (lambda (item) (vscode-mode-reverse-key-sequence item)) vscode-mode-reverse-keybindings-json-parse) 1.0))
 
+;; see also https://stackoverflow.com/questions/4146574/how-to-properly-configure-ctrl-tab-in-emacs?rq=1
+
 ;; (defvar vscode-mode-vscode-style-key-to-emacs-style-key-mapping-alist
 (setq vscode-mode-vscode-style-key-to-emacs-style-key-mapping-alist
  '(
@@ -87,7 +89,9 @@
    ("f10" . "<f10>")
    ("f11" . "<f11>")
    ("f12" . "<f12>")
-   ;; ("end" . "<end>")
+   ("home" . "<home>")
+   ("end" . "<end>")
+
    ))
 
 (defun vscode-mode-reverse-key-sequence (item)

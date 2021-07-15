@@ -39,3 +39,12 @@ Kind of. I haven't found a VSCode emacs package that does more than superficiall
 (https://github.com/jojojames/vscode-icon-emacs)
 
 (https://www.emacswiki.org/emacs/HighlightCurrentLine)
+
+;; keybinding questions
+(https://stackoverflow.com/questions/11721224/shift-arrow-selection-in-emacs)
+(https://stackoverflow.com/questions/29165886/how-to-bind-ctrl-home-and-ctrl-end-to-beginning-end-of-buffer-in-emacs?rq=1)
+(https://stackoverflow.com/questions/4666510/emacs-keybind-questions?rq=1)
+(https://stackoverflow.com/questions/4146574/how-to-properly-configure-ctrl-tab-in-emacs?rq=1)
+(https://stackoverflow.com/questions/31251574/emacs-goto-line-quits-instead-of-going-to-a-line
+ (we want simply Ctrl-g (not needing two g's) to be goto line))
+(https://emacs.stackexchange.com/questions/53461/specifying-a-binding-for-control-shift-tab)
