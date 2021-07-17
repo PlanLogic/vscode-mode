@@ -1,4 +1,4 @@
-(load (concat vscode-mode-dir "/frdcsa-excerpts.el"))
+(load (concat vscode-mode-dir "/vscode-frdcsa.el"))
 (load (concat vscode-mode-dir "/external/easy-moving-from-vscode-to-emacs-1.el"))
 
 (defun vscode-mode-install-required-packages ()

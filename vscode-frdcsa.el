@@ -35,3 +35,27 @@
   (and (boundp arg)
    (not (equal arg nil)))
   t))
+
+(defun join (separator list)
+  "Same as Perl join"
+  (setq value "")
+  (let* ((first nil)
+	 (value
+	  (dolist (elt list value)
+	    (setq value (concat value (if first separator "") elt))
+	    (setq first t))))
+    value))
+
+(defmacro shift (place)
+ "Remove and return the head of the list stored in PLACE.
+Analogous to (prog1 (car PLACE) (setf PLACE (cdr PLACE))), though more
+careful about evaluating each argument only once and in the right order.
+PLACE may be a symbol, or any generalized variable allowed by `setf'."
+ (if (symbolp place)
+  (list 'car 
+   (list 'prog1 
+    (list 'reverse place) 
+    (list 'setq place 
+     (list 'reverse 
+      (list 'cdr 
+       (list 'reverse place))))))))

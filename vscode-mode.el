@@ -57,7 +57,7 @@
 (defvar vscode-minor-mode-map
  (let ((map (make-sparse-keymap)))
   ;; mode management
-  (define-key map (kbd "C-cvr") 'vscode-mode-regenerate-matchmaking)
+  (define-key map (kbd "C-c v r") 'vscode-mode-regenerate-matchmaking)
 
   ;; some manual remappings
   ;; (define-key map "\C-z" 'undo) ;; cua-mode already remaps
