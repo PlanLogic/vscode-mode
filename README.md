@@ -6,7 +6,10 @@ VSCode compatibility globalized minor mode that provides VSCode-style keybinding
 USE ONLY AT YOUR OWN RISK:
 
 This mode installs ELisp packages.
+This mode is pre-alpha.
 This mode is UNDER CONSTRUCTION.
+
+We need testers, please contact me if interested.
 
 
 
